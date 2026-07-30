@@ -1,6 +1,6 @@
 /* ======================================================================
-   SCROLL REVEAL
-   ====================================================================== */
+     SCROLL REVEAL
+     ====================================================================== */
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var els = document.querySelectorAll('.reveal');
@@ -14,24 +14,30 @@
 })();
 
 /* ======================================================================
-   FLOATING BACK-TO-TOP
-   ====================================================================== */
-var floatTop = document.getElementById('floatTop');
-window.addEventListener('scroll', function(){
-  floatTop.classList.toggle('visible', window.scrollY > 700);
-});
+     NAV BUTTONS SHOW/HIDE ON SCROLL
+     ====================================================================== */
+(function(){
+  var nav = document.querySelector('.nav-buttons');
+  if(!nav) return;
+  var lastY = window.scrollY;
+  var ticking = false;
+  window.addEventListener('scroll',function(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY;
+      if(y > 50){
+        if(y > lastY){ nav.classList.add('nav-hidden'); }
+        else { nav.classList.remove('nav-hidden'); }
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastY = y;
+      ticking = false;
+    });
+  });
+})();
 
 /* ======================================================================
-   AUTO-HIDE NAV
-   ====================================================================== */
-var lastScroll = 0;
-var navEl = document.querySelector('.nav');
-window.addEventListener('scroll', function(){
-  var curr = window.scrollY;
-  if(curr > lastScroll && curr > 80){
-    navEl.classList.add('hidden');
-  } else {
-    navEl.classList.remove('hidden');
-  }
-  lastScroll = curr;
-});
+     FLOATING BACK-TO-TOP
+     ====================================================================== */
