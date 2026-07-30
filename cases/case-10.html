@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 10 &mdash; Sonic Boom | Doppler Effect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Questrial:wght@400&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="styles/case.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+</head>
+<body>
+
+<nav class="case-nav" id="caseNav">
+  <div class="case-nav__left">
+    <a href="../index.html#explore" class="case-nav__back"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg><span>Back</span></a>
+    <span class="case-nav__badge" id="caseBadge">10</span>
+  </div>
+  <span class="case-nav__title" id="casePageTitle">Loading&hellip;</span>
+  <div class="case-nav__arrows">
+    <a id="prevBtn" class="case-nav__arrow" href="case-09.html">&larr; Prev</a>
+    <a id="nextBtn" class="case-nav__arrow disabled">Next &rarr;</a>
+  </div>
+</nav>
+<main class="case-layout">
+  <aside class="case-panel" id="casePanel">
+    <div id="caseContent">
+      <div style="display:flex;align-items:center;justify-content:center;min-height:40vh;color:var(--text-mute);font-family:var(--font-mono);font-size:14px">Loading case content&hellip;</div>
+    </div>
+  </aside>
+
+  <section class="sim-panel">
+    <div class="sim-canvas-wrap">
+    <canvas id="simCanvas"></canvas>
+    <div class="sim-source-pos" id="simSourcePos"><img class="sim-source-img" id="simSourceImg" src="../assets/images/source.png" alt="Source"></div>
+    <div class="sim-observer-pos" id="simObserverPos"><img class="sim-observer-img" id="simObserverImg" src="../assets/images/observer.png" alt="Observer"></div>
+    <button class="fs-btn" id="fsBtn" aria-label="Fullscreen"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5"/></svg></button>
+  </div>
+    <div class="sim-info" id="simInfo">
+      <div class="info-item"><span class="info-item__label">Source Speed</span><span class="info-item__value neon-orange" id="infoSrcSpeed">�</span></div>
+      <div class="info-item"><span class="info-item__label">Observer Speed</span><span class="info-item__value neon-cyan" id="infoObsSpeed">�</span></div>
+      <div class="info-item"><span class="info-item__label">Sound Speed</span><span class="info-item__value" id="infoSoundSpeed">�</span></div>
+      <div class="info-item"><span class="info-item__label">Original Freq</span><span class="info-item__value" id="infoOrigFreq">�</span></div>
+      <div class="info-item"><span class="info-item__label">Observed Freq</span><span class="info-item__value neon-green" id="infoObsFreq">�</span></div>
+      <div class="info-item"><span class="info-item__label">Frequency Shift</span><span class="info-item__value" id="infoShift">�</span></div>
+    </div>
+    <div class="sim-controls">
+      <button class="btn btn--play" id="playBtn">Pause</button>
+      <button class="btn btn--reset" id="resetBtn">Reset</button>
+      <label class="speed-control">Speed
+        <input type="range" id="speedRange" min="0.5" max="3" step="0.25" value="1">
+        <span id="speedDisplay">1&times;</span>
+      </label>
+    </div>
+  </section>
+</main>
+
+<script>CASE_ID = 10;</script>
+<script src="scripts/simulation.js"></script>
+<script src="scripts/case.js"></script>
+</body>
+</html>

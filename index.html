@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Doppler Effect — Interactive Physics Lab</title>
+<meta name="description" content="A premium interactive Class 12 Physics guide to the Doppler Effect — theory, formulas, and nine live, controllable simulations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Questrial:wght@400&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/introduction.css">
+<link rel="stylesheet" href="css/cases.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="aurora"><span></span><span></span><span></span></div>
+
+<!-- ============================= NAV ============================= -->
+<nav class="nav">
+  <div class="nav__inner">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#explore">Explore Cases</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero" id="top">
+  <div class="hero__bg"></div>
+  <div class="hero__canvas-wrap"><canvas id="heroCanvas"></canvas></div>
+  <div class="particle-layer" id="particleLayer"></div>
+  <div class="wrap hero__content">
+    <span class="eyebrow">CLASS 12 PHYSICS · WAVES &amp; SOUND</span>
+    <h1>The Doppler<br>Effect</h1>
+    <p class="hero__sub">Why an ambulance siren climbs in pitch as it races toward you, then drops as it speeds away — explained through theory, formulas, and nine simulations you control yourself.</p>
+    <div class="hero__actions">
+      <a href="#explore" class="btn">Start Exploring ↓</a>
+      <a href="#applications" class="btn btn--ghost">See Real-World Uses</a>
+    </div>
+    <div class="hero__meta">Made by Kismat Dahal</div>
+  </div>
+  <a href="#intro" class="hero__scroll" aria-label="Scroll down">
+    SCROLL
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</header>
+
+<main>
+
+<!-- ============================= INTRODUCTION ============================= -->
+<section class="intro" id="intro">
+  <div class="intro__bg"><span></span><span></span></div>
+  <div class="wrap">
+    <div class="intro__split">
+      <div class="intro__text">
+        <div class="reveal">
+          <span class="eyebrow">INTRODUCTION</span>
+          <h2>A shift hiding<br><em>in plain hearing</em></h2>
+          <p>First explained by Christian Doppler in 1842, this effect shows up every time you hear a siren pass by — and it works the same way for light, water, and radar waves too.</p>
+        </div>
+      </div>
+      <div class="intro__visual reveal">
+        <img src="assets/images/intro.png" alt="" loading="lazy">
+      </div>
+    </div>
+
+    <div class="intro-cards">
+      <div class="intro-card reveal" style="--card-accent:#6E8CFF;transition-delay:.1s">
+        <div class="intro-card__img"><img src="assets/backgrounds/card1.png" alt="" loading="lazy"></div>
+        <div class="intro-card__body">
+          <h3>What Is It?</h3>
+          <p>The change in the frequency of a wave — sound, light, or radio — that an observer perceives when the source, the observer, or both are moving relative to one another.</p>
+          <span class="intro-card__badge" style="background:rgba(110,140,255,.15);color:#6E8CFF">Change in frequency</span>
+        </div>
+      </div>
+      <div class="intro-card reveal" style="--card-accent:#2BE8C9;transition-delay:.2s">
+        <div class="intro-card__img"><img src="assets/backgrounds/card2.png" alt="" loading="lazy"></div>
+        <div class="intro-card__body">
+          <h3>Why Does It Occur?</h3>
+          <p>Motion changes the spacing between successive wavefronts — compressed ahead of a moving source, stretched out behind it.</p>
+          <span class="intro-card__badge" style="background:rgba(43,232,201,.15);color:#2BE8C9">Relative motion</span>
+        </div>
+      </div>
+      <div class="intro-card reveal" style="--card-accent:#FFC15E;transition-delay:.3s">
+        <div class="intro-card__img"><img src="assets/backgrounds/card3.png" alt="" loading="lazy"></div>
+        <div class="intro-card__body">
+          <h3>Why It Matters</h3>
+          <p>It's one of the few physics ideas you use daily without noticing — and it underpins radar, ultrasound, and how we measure the universe.</p>
+          <span class="intro-card__badge" style="background:rgba(255,193,94,.15);color:#FFC15E">Powerful real-world impact</span>
+        </div>
+      </div>
+      <div class="intro-card reveal" style="--card-accent:#C77DFF;transition-delay:.4s">
+        <div class="intro-card__img"><img src="assets/backgrounds/card4.png" alt="" loading="lazy"></div>
+        <div class="intro-card__body">
+          <h3>Where You'll Hear It</h3>
+          <p>Sirens, trains, radar guns, weather forecasting, and medical ultrasound all rely on it — explored in detail further down this page.</p>
+          <span class="intro-card__badge" style="background:rgba(199,125,255,.15);color:#C77DFF">All around you</span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- ============================= CASE EXPLORER ============================= -->
+<section class="explore" id="explore">
+  <div class="wrap">
+    <div class="section-head reveal explore-head" style="text-align:center">
+      <h2>Explore Interactive Cases</h2>
+      <p>Explore ten real-world Doppler Effect scenarios through interactive visual simulations. Select any case to understand how the relative motion between the source and observer changes the observed frequency.</p>
+    </div>
+
+    <div class="case-grid reveal" id="caseGrid"></div>
+  </div>
+</section>
+
+<!-- ============================= APPLICATIONS ============================= -->
+<section class="apps" id="applications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">REAL-WORLD USE</span>
+      <h2>Applications &amp; examples</h2>
+      <p>Beyond the classroom, the same shift is engineered into instruments that measure speed, weather, and even the flow of blood.</p>
+    </div>
+    <div class="card-grid reveal">
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE8C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V9a2 2 0 0 1 2-2h6l4 4h4a2 2 0 0 1 2 2v3"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/><path d="M9 11V6"/></svg></div>
+        <h3>Ambulance Sirens</h3>
+        <p>The siren sounds sharp and high as an ambulance approaches, then drops noticeably the moment it passes and pulls away.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="10" rx="2"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/><path d="M4 11h16"/></svg></div>
+        <h3>Passing Trains</h3>
+        <p>A train whistle rises as it nears a platform and falls as it rushes past — a live Doppler curve you can hear.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5B9CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 12 4 8"/><path d="M8 5a9 9 0 0 1 0 14"/><path d="M11 8.5a4 4 0 0 1 0 7"/></svg></div>
+        <h3>Police Radar Guns</h3>
+        <p>Radar bounces microwaves off a moving car; the frequency shift in the return signal reveals its exact speed.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9B7BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15a4 4 0 1 1 1-7.9A5 5 0 0 1 18 9a3.5 3.5 0 0 1-.5 6.9H7Z"/><path d="M8 19l1.5-2M12 19l1.5-2M16 19l1.5-2"/></svg></div>
+        <h3>Weather Radar</h3>
+        <p>Meteorologists track shifts in reflected radar pulses to map wind speed, storm rotation, and rainfall.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF7DC7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+        <h3>Medical Ultrasound</h3>
+        <p>Doppler ultrasound reads the frequency shift of sound reflecting off moving blood cells to visualise blood flow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= LIMITATIONS ============================= -->
+<section class="limits" id="limitations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">GOOD TO KNOW</span>
+      <h2>Limitations of the model</h2>
+      <p>The classic formulas are a simplification. Here's where they start to break down.</p>
+    </div>
+    <div class="card-grid reveal">
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+        <h3>Assumes Low Speed</h3>
+        <p>Accurate only when source and observer speeds stay much smaller than the speed of sound.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+        <h3>A Medium Is Required</h3>
+        <p>Sound needs air, water, or another medium — the acoustic effect cannot occur in a vacuum.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+        <h3>Wind Interference</h3>
+        <p>Moving air changes the effective speed of sound relative to the ground, introducing error.</p>
+      </div>
+      <div class="card glass">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+        <h3>Complex Motion</h3>
+        <p>Curved paths or acceleration make the simple straight-line formulas insufficient.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CONCLUSION ============================= -->
+<section class="conclusion" id="conclusion">
+  <div class="wrap">
+    <div class="conclusion__box glass reveal">
+      <div>
+        <span class="eyebrow">CONCLUSION</span>
+        <h2>One idea, heard everywhere</h2>
+        <p>From a passing ambulance to the redshifted light of a distant galaxy, the Doppler effect is the same simple idea wearing different clothes: motion changes what a wave looks like to whoever receives it. Nine cases, one master formula — and once the sign convention clicks, every siren, whistle, and radar reading on this page becomes predictable rather than mysterious.</p>
+      </div>
+      <div class="conclusion__stats">
+        <div class="stat"><b>1842</b><span>First described by Christian Doppler</span></div>
+        <div class="stat"><b>9</b><span>Motion cases simulated on this page</span></div>
+        <div class="stat"><b>1</b><span>Formula governs every one of them</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="nav__brand-dot"></span>Doppler Effect Lab</div>
+        <p>An interactive Class 12 Physics learning experience — combining an original presentation with a live, controllable wave simulation across nine Doppler effect scenarios.</p>
+      </div>
+      <div>
+        <h4>Technologies Used</h4>
+        <div class="tech-chips">
+          <span class="tech-chip">HTML5</span>
+          <span class="tech-chip">CSS3</span>
+          <span class="tech-chip">JavaScript</span>
+          <span class="tech-chip">Physics Simulation</span>
+          <span class="tech-chip">Responsive Design</span>
+        </div>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <div class="footer__links">
+          <span>Built by Kismat Dahal — Class 12 Physics portfolio project.</span>
+          <a href="#" class="gh-btn" title="Add your repository link here">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.2.67.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Doppler Effect Interactive Lab. Built for educational use.</span>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<button class="float-top" id="floatTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script src="js/scroll-effects.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/cases-data.js"></script>
+<script src="js/cases-ui.js"></script>
+</body>
+</html>

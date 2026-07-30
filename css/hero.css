@@ -1,0 +1,27 @@
+/* ============================= NAV ============================= */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;transition:transform .4s ease;}
+.nav.hidden{transform:translateY(-100%);}
+.nav__inner{max-width:var(--maxw);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:center;}
+.nav__links{display:flex;gap:4px;list-style:none;margin:0;padding:0;}
+.nav__links a{display:block;padding:9px 15px;border-radius:999px;font-size:14px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;transition:color .2s ease,background .2s ease;}
+.nav__links a:hover{color:var(--text);background:rgba(255,255,255,.07);}
+.nav__toggle{display:none;background:none;border:none;color:var(--text);padding:6px;cursor:pointer;}
+.nav__toggle svg{width:22px;height:22px;}
+
+/* ============================= HERO ============================= */
+.hero{position:relative;overflow:hidden;padding:130px 0 100px;min-height:88vh;display:flex;align-items:center;}
+.hero__bg{position:absolute;inset:0;z-index:0;background:url('../assets/images/hero.png') no-repeat center center / cover;transform:scale(1.08);}
+.hero__canvas-wrap{position:absolute;inset:0;z-index:1;mask-image:linear-gradient(to bottom, black 55%, transparent 97%);-webkit-mask-image:linear-gradient(to bottom, black 55%, transparent 97%);}
+#heroCanvas{width:100%;height:100%;display:block;}
+.particle-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;}
+.particle{position:absolute;border-radius:50%;background:radial-gradient(circle,#fff,rgba(255,255,255,0) 70%);animation-name:floatParticle;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+.hero__content{position:relative;z-index:2;max-width:760px;margin-left:clamp(30px,6vw,100px);}
+.hero h1{font-size:clamp(46px,7.6vw,92px);line-height:.98;margin:22px 0 22px;font-family:'Orbitron',sans-serif;font-weight:800;letter-spacing:-.03em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero__sub{font-size:18px;color:var(--text-dim);max-width:560px;margin-bottom:38px;}
+.hero__actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+.hero__meta{margin-top:58px;font-family:var(--font-mono);font-size:12.5px;color:var(--text-mute);display:flex;align-items:center;gap:10px;}
+.hero__meta::before{content:"";width:26px;height:1px;background:var(--glass-border-strong);}
+.hero__scroll{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:1;
+  display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-mute);font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;}
+.hero__scroll svg{width:16px;height:16px;animation:bounceChevron 1.8s ease-in-out infinite;}
