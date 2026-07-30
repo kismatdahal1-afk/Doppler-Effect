@@ -23,12 +23,22 @@ var simSourceImg, simObserverImg, simSourcePos, simObserverPos;
 
 function simLayout(){
   var dpr = window.devicePixelRatio || 1;
-  var cssW = sim.canvas.parentElement.clientWidth || 600;
-  var cssH = sim.canvas.parentElement.clientHeight || 280;
-  sim.canvas.width = Math.max(1, Math.round(cssW*dpr));
-  sim.canvas.height = Math.max(1, Math.round(cssH*dpr));
+  var vp = document.getElementById('simViewport');
+  if(!vp) return;
+  var vpW = vp.clientWidth, vpH = vp.clientHeight;
+  var aspect = 860/380;
+  var stageW, stageH;
+  if(vpW / vpH > aspect){
+    stageH = vpH; stageW = vpH * aspect;
+  } else {
+    stageW = vpW; stageH = vpW / aspect;
+  }
+  var stage = document.getElementById('simStage');
+  if(stage){ stage.style.width = stageW+'px'; stage.style.height = stageH+'px'; }
+  sim.canvas.width = Math.max(1, Math.round(stageW*dpr));
+  sim.canvas.height = Math.max(1, Math.round(stageH*dpr));
   sim.ctx.setTransform(dpr,0,0,dpr,0,0);
-  sim.W = cssW; sim.H = cssH; sim.centerY = cssH/2;
+  sim.W = stageW; sim.H = stageH; sim.centerY = stageH/2;
   sim.source.y = sim.centerY; sim.observer.y = sim.centerY;
 }
 
@@ -101,12 +111,17 @@ function updateImageDirections(){
 
 function syncImagePositions(){
   if(!simSourcePos||!simObserverPos||!simSourceImg||!simObserverImg) return;
-  var sx=sim.source.x-simSourceImg.offsetWidth/2;
-  var sy=sim.source.y-simSourceImg.offsetHeight/2;
-  var ox=sim.observer.x-simObserverImg.offsetWidth/2;
-  var oy=sim.observer.y-simObserverImg.offsetHeight/2;
-  simSourcePos.style.transform='translate3d('+sx+'px,'+sy+'px,0)';
-  simObserverPos.style.transform='translate3d('+ox+'px,'+oy+'px,0)';
+  var vw = window.innerWidth;
+  var srcW = Math.min(240, Math.max(75, vw * 0.1));
+  var srcH = simSourceImg.naturalHeight ? srcW * simSourceImg.naturalHeight / simSourceImg.naturalWidth : simSourceImg.offsetHeight;
+  var obsW = Math.min(200, Math.max(55, vw * 0.095));
+  var obsH = simObserverImg.naturalHeight ? obsW * simObserverImg.naturalHeight / simObserverImg.naturalWidth : simObserverImg.offsetHeight;
+  var sx = sim.source.x - srcW / 2;
+  var sy = sim.source.y - srcH / 2;
+  var ox = sim.observer.x - obsW / 2;
+  var oy = sim.observer.y - obsH / 2;
+  simSourcePos.style.transform = 'translate3d(' + sx + 'px,' + sy + 'px,0)';
+  simObserverPos.style.transform = 'translate3d(' + ox + 'px,' + oy + 'px,0)';
 }
 
 /* ============================= DRAWING ============================= */
@@ -138,42 +153,52 @@ function simDraw(){
 }
 
 function computeObservedFreq(){
-  var n = sim.caseId;
-  if(n===1) return BASE_FREQ;
+  if(sim.caseId === 10) return -1;
   var v = SOUND_SPEED;
-  var vs = Math.abs(sim.source.vx);
-  var vo = Math.abs(sim.observer.vx);
-  var closingS = false, closingO = false;
-  if(n===2) closingO = true;
-  else if(n===3) closingO = false;
-  else if(n===4) closingS = true;
-  else if(n===5) closingS = false;
-  else if(n===6){ closingS=true; closingO=true; }
-  else if(n===7){ closingS=false; closingO=false; }
-  else if(n===8){ closingS=true; closingO=false; }
-  else if(n===9){ closingS=false; closingO=true; }
-  else if(n===10) return -1;
-  var denom = closingS ? (v - vs) : (v + vs);
-  if(denom<=0) return -1;
-  return Math.round(BASE_FREQ * (closingO ? (v + vo) : (v - vo)) / denom);
+  var dx = sim.observer.x - sim.source.x;
+  var blend = Math.tanh(dx * 0.05);
+  var vObsTerm = -blend * sim.observer.vx;
+  var vSrcTerm = -blend * sim.source.vx;
+  var denom = v + vSrcTerm;
+  if(denom <= 0) return -1;
+  return Math.round(BASE_FREQ * (v + vObsTerm) / denom);
 }
 
 function updateInfoPanel(fObs){
   var vs = Math.abs(sim.source.vx);
   var vo = Math.abs(sim.observer.vx);
-  var fShift = fObs > 0 ? fObs - BASE_FREQ : 0;
-  document.getElementById('infoSrcSpeed').textContent = vs.toFixed(0)+' m/s';
-  document.getElementById('infoObsSpeed').textContent = vo.toFixed(0)+' m/s';
-  document.getElementById('infoSoundSpeed').textContent = SOUND_SPEED+' m/s';
-  document.getElementById('infoOrigFreq').textContent = BASE_FREQ+' Hz';
-  document.getElementById('infoObsFreq').textContent = fObs > 0 ? fObs+' Hz' : '\u2014';
-  var shiftEl = document.getElementById('infoShift');
+  var elSrc = document.getElementById('infoSrcSpeed');
+  var elObs = document.getElementById('infoObsSpeed');
+  var elSound = document.getElementById('infoSoundSpeed');
+  var elOrig = document.getElementById('infoOrigFreq');
+  var elObsF = document.getElementById('infoObsFreq');
+  var elShift = document.getElementById('infoShift');
+  var elMach = document.getElementById('machCard');
+  var elMachV = document.getElementById('infoMach');
+  if(elSrc) elSrc.textContent = vs.toFixed(0);
+  if(elObs) elObs.textContent = vo.toFixed(0);
+  if(elSound) elSound.textContent = SOUND_SPEED;
+  if(elOrig) elOrig.textContent = BASE_FREQ;
+  var grid = document.querySelector('.sim-footer__grid');
+  if(sim.caseId === 10){
+    if(elMach) elMach.style.display = 'flex';
+    if(elMachV) elMachV.textContent = (sim.source.vx / sim.waveSpeed).toFixed(2);
+    if(elObsF){ elObsF.textContent = 'Shock'; elObsF.style.color = '#FF6B5E'; }
+    if(elShift){ elShift.textContent = 'Front'; elShift.style.color = '#FF6B5E'; }
+    if(grid) grid.style.gridTemplateColumns = 'repeat(7,1fr)';
+    return;
+  }
+  if(elMach) elMach.style.display = 'none';
+  if(grid) grid.style.gridTemplateColumns = '';
+  if(elObsF){ elObsF.textContent = fObs > 0 ? fObs : '\u2014'; elObsF.style.color = ''; }
   if(fObs > 0){
-    shiftEl.textContent = (fShift>=0?'+':'')+fShift+' Hz';
-    shiftEl.className = 'info-item__value '+(fShift>0?'neon-green':(fShift<0?'neon-orange':''));
+    var fShift = fObs - BASE_FREQ;
+    if(elShift){
+      elShift.textContent = (fShift >= 0 ? '+' : '') + fShift;
+      elShift.style.color = fShift > 0 ? '#4ade80' : (fShift < 0 ? '#FF6B5E' : '');
+    }
   }else{
-    shiftEl.textContent = '\u2014';
-    shiftEl.className = 'info-item__value';
+    if(elShift){ elShift.textContent = '\u2014'; elShift.style.color = ''; }
   }
 }
 
@@ -212,12 +237,30 @@ function startSimulation(n){
   simSetPositions(n); simSetVelocities(n);
   simDraw(); simEmit();
   if(!sim.anim) sim.anim = requestAnimationFrame(simLoop);
-  document.getElementById('playBtn').textContent = 'Pause';
+  var label = document.getElementById('playLabel');
+  if(label) label.textContent = 'Pause';
+  var btn = document.getElementById('playBtn');
+  if(btn){
+    btn.classList.remove('paused');
+    var svg = btn.querySelector('svg');
+    if(svg) svg.innerHTML = '<rect x="0" y="0" width="6" height="20" rx="1"/><rect x="11" y="0" width="6" height="20" rx="1"/>';
+  }
 }
 
 function toggleSimPause(){
   sim.isPaused = !sim.isPaused;
-  document.getElementById('playBtn').textContent = sim.isPaused ? 'Play' : 'Pause';
+  var btn = document.getElementById('playBtn');
+  var label = document.getElementById('playLabel');
+  var svg = btn.querySelector('svg');
+  if(sim.isPaused){
+    label.textContent = 'Play';
+    btn.classList.add('paused');
+    svg.innerHTML = '<polygon points="0,0 20,10 0,20"/>';
+  }else{
+    label.textContent = 'Pause';
+    btn.classList.remove('paused');
+    svg.innerHTML = '<rect x="0" y="0" width="6" height="20" rx="1"/><rect x="11" y="0" width="6" height="20" rx="1"/>';
+  }
 }
 
 function resetSimulation(){
@@ -225,12 +268,22 @@ function resetSimulation(){
   sim.isPaused = false;
   simSetPositions(sim.caseId); simSetVelocities(sim.caseId);
   simDraw(); simEmit();
-  document.getElementById('playBtn').textContent = 'Pause';
+  var label = document.getElementById('playLabel');
+  if(label) label.textContent = 'Pause';
+  var btn = document.getElementById('playBtn');
+  if(btn){
+    btn.classList.remove('paused');
+    var svg = btn.querySelector('svg');
+    if(svg) svg.innerHTML = '<rect x="0" y="0" width="6" height="20" rx="1"/><rect x="11" y="0" width="6" height="20" rx="1"/>';
+  }
 }
 
-function setSimSpeed(val){
-  sim.speedMult = parseFloat(val);
-  document.getElementById('speedDisplay').textContent = sim.speedMult.toFixed(2).replace(/\.?0+$/,'')+'\u00D7';
+var SPEED_VALUES = [0.25,0.5,0.75,1,1.25,1.5,1.75,2];
+
+function setSimSpeed(idx){
+  var val = SPEED_VALUES[parseInt(idx)] || 1;
+  sim.speedMult = val;
+  document.getElementById('speedDisplay').textContent = val.toFixed(2).replace(/\.?0+$/,'')+'\u00D7';
 }
 
 function simOnResize(){
@@ -250,24 +303,54 @@ function initSimulation(canvasId, caseNumber){
 
   document.getElementById('fsBtn').addEventListener('click',toggleFullscreen);
 
+  var speedRange = document.getElementById('speedRange');
+  if(speedRange){
+    speedRange.addEventListener('input',function(){ setSimSpeed(this.value); });
+  }
+  var speedDec = document.getElementById('speedDec');
+  if(speedDec){
+    speedDec.addEventListener('click',function(){
+      var r = document.getElementById('speedRange');
+      if(!r) return;
+      var v = Math.max(0, parseInt(r.value) - 1);
+      r.value = v; setSimSpeed(v);
+    });
+  }
+  var speedInc = document.getElementById('speedInc');
+  if(speedInc){
+    speedInc.addEventListener('click',function(){
+      var r = document.getElementById('speedRange');
+      if(!r) return;
+      var v = Math.min(7, parseInt(r.value) + 1);
+      r.value = v; setSimSpeed(v);
+    });
+  }
+
   loadImages(function(){ startSimulation(caseNumber); });
 }
 
 function toggleFullscreen(){
   var panel=document.querySelector('.sim-panel');
+  var btn = document.getElementById('fsBtn');
   if(!document.fullscreenElement && !document.webkitFullscreenElement){
     if(panel.requestFullscreen) panel.requestFullscreen();
     else if(panel.webkitRequestFullscreen) panel.webkitRequestFullscreen();
     panel.classList.add('fullscreen');
+    if(btn) btn.classList.add('active');
   }else{
     if(document.exitFullscreen) document.exitFullscreen();
     else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
     panel.classList.remove('fullscreen');
+    if(btn) btn.classList.remove('active');
   }
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ simOnResize(); }); });
 }
-document.addEventListener('fullscreenchange',function(){
-  document.querySelector('.sim-panel').classList.toggle('fullscreen',!!document.fullscreenElement);
-});
-document.addEventListener('webkitfullscreenchange',function(){
-  document.querySelector('.sim-panel').classList.toggle('fullscreen',!!document.webkitFullscreenElement);
-});
+function onFullscreenChange(){
+  var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+  document.querySelector('.sim-panel').classList.toggle('fullscreen', isFs);
+  var b = document.getElementById('fsBtn');
+  if(b) b.classList.toggle('active', isFs);
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ simOnResize(); }); });
+}
+document.addEventListener('fullscreenchange', onFullscreenChange);
+document.addEventListener('webkitfullscreenchange', onFullscreenChange);

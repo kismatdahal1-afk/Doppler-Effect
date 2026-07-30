@@ -34,26 +34,67 @@
 
   <section class="sim-panel">
     <div class="sim-canvas-wrap">
-    <canvas id="simCanvas"></canvas>
-    <div class="sim-source-pos" id="simSourcePos"><img class="sim-source-img" id="simSourceImg" src="../assets/images/source.png" alt="Source"></div>
-    <div class="sim-observer-pos" id="simObserverPos"><img class="sim-observer-img" id="simObserverImg" src="../assets/images/observer.png" alt="Observer"></div>
-    <button class="fs-btn" id="fsBtn" aria-label="Fullscreen"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5"/></svg></button>
-  </div>
-    <div class="sim-info" id="simInfo">
-      <div class="info-item"><span class="info-item__label">Source Speed</span><span class="info-item__value neon-orange" id="infoSrcSpeed">�</span></div>
-      <div class="info-item"><span class="info-item__label">Observer Speed</span><span class="info-item__value neon-cyan" id="infoObsSpeed">�</span></div>
-      <div class="info-item"><span class="info-item__label">Sound Speed</span><span class="info-item__value" id="infoSoundSpeed">�</span></div>
-      <div class="info-item"><span class="info-item__label">Original Freq</span><span class="info-item__value" id="infoOrigFreq">�</span></div>
-      <div class="info-item"><span class="info-item__label">Observed Freq</span><span class="info-item__value neon-green" id="infoObsFreq">�</span></div>
-      <div class="info-item"><span class="info-item__label">Frequency Shift</span><span class="info-item__value" id="infoShift">�</span></div>
+      <div class="sim-viewport" id="simViewport">
+        <div class="sim-stage" id="simStage">
+          <canvas id="simCanvas"></canvas>
+          <div class="sim-source-pos" id="simSourcePos"><img class="sim-source-img" id="simSourceImg" src="../assets/images/source.png" alt="Source"></div>
+          <div class="sim-observer-pos" id="simObserverPos"><img class="sim-observer-img" id="simObserverImg" src="../assets/images/observer.png" alt="Observer"></div>
+        </div>
+        <button class="fs-btn" id="fsBtn" aria-label="Fullscreen"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5"/></svg></button>
+      </div>
     </div>
-    <div class="sim-controls">
-      <button class="btn btn--play" id="playBtn">Pause</button>
-      <button class="btn btn--reset" id="resetBtn">Reset</button>
-      <label class="speed-control">Speed
-        <input type="range" id="speedRange" min="0.5" max="3" step="0.25" value="1">
-        <span id="speedDisplay">1&times;</span>
-      </label>
+    <div class="sim-footer" id="simFooter">
+      <div class="sim-footer__grid">
+        <div class="sim-footer__item">
+          <span class="sim-footer__label">Source Speed</span>
+          <span class="sim-footer__value sim-footer__value--red" id="infoSrcSpeed">0</span>
+          <span class="sim-footer__unit">m/s</span>
+        </div>
+        <div class="sim-footer__item">
+          <span class="sim-footer__label">Observer Speed</span>
+          <span class="sim-footer__value sim-footer__value--cyan" id="infoObsSpeed">0</span>
+          <span class="sim-footer__unit">m/s</span>
+        </div>
+        <div class="sim-footer__item">
+          <span class="sim-footer__label">Speed of Sound</span>
+          <span class="sim-footer__value" id="infoSoundSpeed">340</span>
+          <span class="sim-footer__unit">m/s</span>
+        </div>
+        <div class="sim-footer__item">
+          <span class="sim-footer__label">Original Frequency</span>
+          <span class="sim-footer__value" id="infoOrigFreq">500</span>
+          <span class="sim-footer__unit">Hz</span>
+        </div>
+        <div class="sim-footer__item">
+          <span class="sim-footer__label">Observed Frequency</span>
+          <span class="sim-footer__value sim-footer__value--green" id="infoObsFreq">500</span>
+          <span class="sim-footer__unit">Hz</span>
+        </div>
+        <div class="sim-footer__item">
+          <span class="sim-footer__label">Frequency Shift</span>
+          <span class="sim-footer__value sim-footer__value--purple" id="infoShift">+0</span>
+          <span class="sim-footer__unit">Hz</span>
+        </div>
+        <div class="sim-footer__item" id="machCard" style="display:none">
+          <span class="sim-footer__label">Mach Number</span>
+          <span class="sim-footer__value sim-footer__value--gold" id="infoMach">0</span>
+          <span class="sim-footer__unit">Ma</span>
+        </div>
+      </div>
+      <div class="sim-controls">
+        <div class="controls-group">
+          <button class="ctrl-btn ctrl-btn--play" id="playBtn"><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><rect x="0" y="0" width="6" height="20" rx="1"/><rect x="11" y="0" width="6" height="20" rx="1"/></svg><span id="playLabel">Pause</span></button>
+          <button class="ctrl-btn ctrl-btn--reset" id="resetBtn"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4v5h5M16 16v-5h-5"/><path d="M4 9a8 8 0 0 1 13.66-4.66M16 11a8 8 0 0 1-13.66 4.66"/></svg><span>Reset</span></button>
+        </div>
+        <div class="speed-control">
+          <button class="speed-btn" id="speedDec">−</button>
+          <div class="speed-slider-wrap">
+            <input type="range" id="speedRange" min="0" max="7" step="1" value="3">
+          </div>
+          <button class="speed-btn" id="speedInc">+</button>
+          <span class="speed-label" id="speedDisplay">1×</span>
+        </div>
+      </div>
     </div>
   </section>
 </main>
