@@ -261,6 +261,9 @@ function resetSimulation(){
   sim.isPaused = false;
   simSetPositions(sim.caseId); simSetVelocities(sim.caseId);
   simDraw(); simEmit();
+  setSimSpeed(3);
+  var r = document.getElementById('speedRange');
+  if(r) r.value = 3;
   var label = document.getElementById('playLabel');
   if(label) label.textContent = 'Pause';
   var btn = document.getElementById('playBtn');
@@ -326,16 +329,20 @@ function initSimulation(canvasId, caseNumber){
 function toggleFullscreen(){
   var panel=document.querySelector('.sim-panel');
   var btn = document.getElementById('fsBtn');
+  var enter = '<path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5"/>';
+  var exit = '<path d="M8 3v5H3M12 3v5h5M8 17v-5H3M12 17v-5h5"/>';
   if(!document.fullscreenElement && !document.webkitFullscreenElement){
     if(panel.requestFullscreen) panel.requestFullscreen();
     else if(panel.webkitRequestFullscreen) panel.webkitRequestFullscreen();
     panel.classList.add('fullscreen');
     if(btn) btn.classList.add('active');
+    if(btn) btn.querySelector('svg').innerHTML = exit;
   }else{
     if(document.exitFullscreen) document.exitFullscreen();
     else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
     panel.classList.remove('fullscreen');
     if(btn) btn.classList.remove('active');
+    if(btn) btn.querySelector('svg').innerHTML = enter;
   }
   requestAnimationFrame(function(){ requestAnimationFrame(function(){
     simOnResize();
@@ -349,7 +356,12 @@ function onFullscreenChange(){
   var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
   document.querySelector('.sim-panel').classList.toggle('fullscreen', isFs);
   var b = document.getElementById('fsBtn');
-  if(b) b.classList.toggle('active', isFs);
+  var enter = '<path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5"/>';
+  var exit = '<path d="M8 3v5H3M12 3v5h5M8 17v-5H3M12 17v-5h5"/>';
+  if(b){
+    b.classList.toggle('active', isFs);
+    b.querySelector('svg').innerHTML = isFs ? exit : enter;
+  }
   requestAnimationFrame(function(){ requestAnimationFrame(function(){
     simOnResize();
     resetSimulation();
