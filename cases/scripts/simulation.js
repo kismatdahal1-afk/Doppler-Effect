@@ -26,19 +26,12 @@ function simLayout(){
   var vp = document.getElementById('simViewport');
   if(!vp) return;
   var vpW = vp.clientWidth, vpH = vp.clientHeight;
-  var aspect = 860/380;
-  var stageW, stageH;
-  if(vpW / vpH > aspect){
-    stageH = vpH; stageW = vpH * aspect;
-  } else {
-    stageW = vpW; stageH = vpW / aspect;
-  }
-  var stage = document.getElementById('simStage');
-  if(stage){ stage.style.width = stageW+'px'; stage.style.height = stageH+'px'; }
-  sim.canvas.width = Math.max(1, Math.round(stageW*dpr));
-  sim.canvas.height = Math.max(1, Math.round(stageH*dpr));
+  sim.canvas.width = Math.max(1, Math.round(vpW*dpr));
+  sim.canvas.height = Math.max(1, Math.round(vpH*dpr));
+  sim.canvas.style.width = vpW + 'px';
+  sim.canvas.style.height = vpH + 'px';
   sim.ctx.setTransform(dpr,0,0,dpr,0,0);
-  sim.W = stageW; sim.H = stageH; sim.centerY = stageH/2;
+  sim.W = vpW; sim.H = vpH; sim.centerY = vpH/2;
   sim.source.y = sim.centerY; sim.observer.y = sim.centerY;
 }
 
@@ -111,15 +104,19 @@ function updateImageDirections(){
 
 function syncImagePositions(){
   if(!simSourcePos||!simObserverPos||!simSourceImg||!simObserverImg) return;
-  var vw = window.innerWidth;
-  var srcW = Math.min(240, Math.max(75, vw * 0.1));
-  var srcH = simSourceImg.naturalHeight ? srcW * simSourceImg.naturalHeight / simSourceImg.naturalWidth : simSourceImg.offsetHeight;
-  var obsW = Math.min(200, Math.max(55, vw * 0.095));
-  var obsH = simObserverImg.naturalHeight ? obsW * simObserverImg.naturalHeight / simObserverImg.naturalWidth : simObserverImg.offsetHeight;
-  var sx = sim.source.x - srcW / 2;
-  var sy = sim.source.y - srcH / 2;
-  var ox = sim.observer.x - obsW / 2;
-  var oy = sim.observer.y - obsH / 2;
+  function imgSize(img, defW){
+    var cs = getComputedStyle(img);
+    var w = parseFloat(cs.width);
+    if(!w || w <= 0) w = Math.min(defW[1], Math.max(defW[0], window.innerWidth * defW[2]));
+    var h = img.naturalHeight ? w * img.naturalHeight / img.naturalWidth : parseFloat(cs.height);
+    return {w:w, h:h};
+  }
+  var src = imgSize(simSourceImg, [75, 240, 0.1]);
+  var obs = imgSize(simObserverImg, [55, 200, 0.095]);
+  var sx = sim.source.x - src.w / 2;
+  var sy = sim.source.y - src.h / 2;
+  var ox = sim.observer.x - obs.w / 2;
+  var oy = sim.observer.y - obs.h / 2;
   simSourcePos.style.transform = 'translate3d(' + sx + 'px,' + sy + 'px,0)';
   simObserverPos.style.transform = 'translate3d(' + ox + 'px,' + oy + 'px,0)';
 }
@@ -128,10 +125,6 @@ function syncImagePositions(){
 function simDraw(){
   var ctx = sim.ctx; var W=sim.W, H=sim.H;
   ctx.clearRect(0,0,W,H);
-
-  ctx.strokeStyle="rgba(180,170,155,.25)"; ctx.lineWidth=1;
-  for(var x=0;x<W;x+=40){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
-  for(var y=0;y<H;y+=40){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
 
   ctx.strokeStyle="#ccff00"; ctx.lineWidth=3;
   sim.waves.forEach(function(w){
