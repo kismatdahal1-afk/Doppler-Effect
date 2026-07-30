@@ -43,6 +43,7 @@ body{overflow-x:hidden;}
 }
 .case-nav__arrows{display:flex;gap:10px;}
 .case-nav__arrow{
+  display:inline-flex;align-items:center;gap:8px;
   font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;
   color:var(--text);text-decoration:none;
   padding:8px 18px;border-radius:12px;
