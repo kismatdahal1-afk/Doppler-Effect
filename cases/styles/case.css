@@ -127,6 +127,17 @@ body{overflow-x:hidden;}
 /* highlighted terms */
 .case-section .hl{color:#8AACFF;font-weight:600;}
 
+/* uniform body text size + justify */
+#caseContent p,
+#caseContent li,
+#caseContent .step-text,
+#caseContent .step-desc,
+#caseContent .info-card p,
+#caseContent .summary-box p{
+  font-size:18px;
+  text-align:justify;
+}
+
 /* ============================= FORMULA CARD ============================= */
 .formula-card{
   background:rgba(0,0,0,.35);border:1px solid rgba(110,140,255,.22);

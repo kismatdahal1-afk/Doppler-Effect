@@ -75,7 +75,7 @@
         out.push('<li>'+mdBold(l.replace(/^-\s+/,''))+'</li>');
       }else{
         if(inList){ out.push('</ul>'); inList=false; }
-        out.push(mdBold(l));
+        out.push('<p>'+mdBold(l)+'</p>');
       }
     }
     if(inList) out.push('</ul>');
