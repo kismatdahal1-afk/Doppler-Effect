@@ -276,7 +276,8 @@ var SPEED_VALUES = [0.25,0.5,0.75,1,1.25,1.5,1.75,2];
 function setSimSpeed(idx){
   var val = SPEED_VALUES[parseInt(idx)] || 1;
   sim.speedMult = val;
-  document.getElementById('speedDisplay').textContent = val.toFixed(2).replace(/\.?0+$/,'')+'\u00D7';
+  var el = document.getElementById('speedDisplay');
+  if(el) el.textContent = val.toFixed(2).replace(/\.?0+$/,'')+'\u00D7';
 }
 
 function simOnResize(){
