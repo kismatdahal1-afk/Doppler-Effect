@@ -336,14 +336,26 @@ function toggleFullscreen(){
     panel.classList.remove('fullscreen');
     if(btn) btn.classList.remove('active');
   }
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){ simOnResize(); }); });
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    simOnResize();
+    resetSimulation();
+    setSimSpeed(3);
+    var r = document.getElementById('speedRange');
+    if(r) r.value = 3;
+  }); });
 }
 function onFullscreenChange(){
   var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
   document.querySelector('.sim-panel').classList.toggle('fullscreen', isFs);
   var b = document.getElementById('fsBtn');
   if(b) b.classList.toggle('active', isFs);
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){ simOnResize(); }); });
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    simOnResize();
+    resetSimulation();
+    setSimSpeed(3);
+    var r = document.getElementById('speedRange');
+    if(r) r.value = 3;
+  }); });
 }
 document.addEventListener('fullscreenchange', onFullscreenChange);
 document.addEventListener('webkitfullscreenchange', onFullscreenChange);
