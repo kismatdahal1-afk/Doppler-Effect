@@ -26,7 +26,10 @@
   <div class="hero__bg"></div>
   <div class="hero__canvas-wrap"><canvas id="heroCanvas"></canvas></div>
   <div class="particle-layer" id="particleLayer"></div>
-  <div class="nav-buttons">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-buttons" id="navMenu">
     <a href="#intro">Introduction</a>
     <a href="#explore">Explore Cases</a>
     <a href="#applications">Applications</a>
@@ -490,6 +493,7 @@
 </button>
 
 <script src="js/scroll-effects.js"></script>
+<script src="js/navigation.js"></script>
 <script src="js/hero.js"></script>
 <script src="js/cases-data.js"></script>
 <script src="js/cases-ui.js"></script>

@@ -30,6 +30,7 @@
 @media (max-width:1100px){
   .lim-hero{grid-template-columns:1fr;gap:60px;}
   .lim-hero__visual{order:2;}
+  .lim-hero-img{width:100%;margin-left:0;}
   .lim-cards{grid-template-columns:repeat(2,1fr);}
   .lim-assumptions{grid-template-columns:1fr;gap:32px;}
   .lim-assumptions__grid{grid-template-columns:repeat(3,1fr);}
@@ -63,4 +64,66 @@
 @media (max-width:640px){
   .footer__grid{grid-template-columns:1fr;gap:28px;text-align:center;}
   .footer__col{align-items:center;}
+}
+
+/* ============================= RESPONSIVE NAVIGATION (MOBILE & TABLET) ============================= */
+/* hamburger toggle is desktop-hidden; desktop nav bar stays exactly as it is */
+.nav-toggle{display:none;}
+
+@media (max-width:1024px){
+  /* ---------- hamburger icon (top-left of header) ---------- */
+  .nav-toggle{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+    position:fixed;top:16px;left:20px;z-index:7;
+    width:44px;height:44px;padding:0;border:none;border-radius:12px;cursor:pointer;
+    background:var(--glass-bg);border:1px solid var(--glass-border);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  }
+  .nav-toggle span{
+    display:block;width:20px;height:2px;border-radius:2px;background:#fff;
+    transition:transform .3s ease,opacity .3s ease;
+  }
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ---------- nav becomes a vertical dropdown below the header ---------- */
+  .nav-buttons{
+    position:fixed;top:72px;left:16px;right:16px;z-index:6;
+    width:auto;transform:translateY(-10px);opacity:0;visibility:hidden;pointer-events:none;
+    flex-direction:column;align-items:stretch;gap:0;padding:12px;
+    border-radius:18px;border:1px solid var(--glass-border);
+    background:rgba(8,11,24,.92);
+    box-shadow:0 24px 60px -24px rgba(0,0,0,.85);
+    backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);
+    transition:opacity .3s ease,transform .3s ease,visibility .3s ease;
+  }
+  .nav-buttons.nav-hidden{transform:translateY(-10px);opacity:0;visibility:hidden;pointer-events:none;}
+  .nav-buttons.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;}
+  .nav-buttons a{
+    font-size:15px;letter-spacing:.06em;text-align:left;
+    padding:15px 18px;border-radius:11px;
+  }
+  .nav-buttons a::after{display:none;}
+  .nav-buttons a + a{margin-top:4px;}
+  .nav-buttons a:hover{color:#fff;background:rgba(110,140,255,.12);}
+
+  /* ---------- hero: full-width content, buttons share the row equally ---------- */
+  .hero__content{max-width:100%;margin-left:0;}
+  .hero__actions .btn{flex:1;justify-content:center;}
+}
+
+/* ============================= HERO (PHONE) ============================= */
+@media (max-width:600px){
+  .hero{min-height:auto;padding:120px 0 90px;}
+  .hero h1{font-size:clamp(38px,11vw,58px);line-height:1.02;}
+  .hero__sub{font-size:16.5px;max-width:100%;margin-bottom:30px;}
+  .hero__actions{flex-direction:column;align-items:stretch;gap:14px;}
+  .hero__actions .btn{width:100%;flex:none;}
+  .hero__meta{margin-top:48px;font-size:17px;}
+}
+
+/* ============================= SMALL SCREENS: CONSISTENT PADDING ============================= */
+@media (max-width:480px){
+  .wrap{padding:0 20px;}
 }
