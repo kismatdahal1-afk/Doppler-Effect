@@ -306,7 +306,6 @@ body{overflow-x:hidden;}
   .app-nav{padding:8px 16px;}
 }
 @media (max-width:900px){
-  .app-nav__title{display:none;}
   .overview-grid{grid-template-columns:repeat(2,1fr);}
   .overview-grid--3{grid-template-columns:repeat(2,1fr);}
   .app-bottom-nav{grid-template-columns:1fr;justify-items:stretch;}
