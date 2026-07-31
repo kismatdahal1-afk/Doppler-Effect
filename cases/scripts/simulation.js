@@ -226,17 +226,17 @@ function startSimulation(n){
   sim.caseId = n;
   simLayout();
   sim.waves = []; sim.lastTS = null; sim.emitAccum = 0;
-  sim.isPaused = false;
+  sim.isPaused = true;
   simSetPositions(n); simSetVelocities(n);
   simDraw(); simEmit();
   if(!sim.anim) sim.anim = requestAnimationFrame(simLoop);
   var label = document.getElementById('playLabel');
-  if(label) label.textContent = 'Pause';
+  if(label) label.textContent = 'Play';
   var btn = document.getElementById('playBtn');
   if(btn){
-    btn.classList.remove('paused');
+    btn.classList.add('paused');
     var svg = btn.querySelector('svg');
-    if(svg) svg.innerHTML = '<rect x="0" y="0" width="6" height="20" rx="1"/><rect x="11" y="0" width="6" height="20" rx="1"/>';
+    if(svg) svg.innerHTML = '<polygon points="0,0 20,10 0,20"/>';
   }
 }
 
@@ -258,19 +258,19 @@ function toggleSimPause(){
 
 function resetSimulation(){
   sim.waves = []; sim.lastTS = null; sim.emitAccum = 0;
-  sim.isPaused = false;
+  sim.isPaused = true;
   simSetPositions(sim.caseId); simSetVelocities(sim.caseId);
   simDraw(); simEmit();
   setSimSpeed(3);
   var r = document.getElementById('speedRange');
   if(r) r.value = 3;
   var label = document.getElementById('playLabel');
-  if(label) label.textContent = 'Pause';
+  if(label) label.textContent = 'Play';
   var btn = document.getElementById('playBtn');
   if(btn){
-    btn.classList.remove('paused');
+    btn.classList.add('paused');
     var svg = btn.querySelector('svg');
-    if(svg) svg.innerHTML = '<rect x="0" y="0" width="6" height="20" rx="1"/><rect x="11" y="0" width="6" height="20" rx="1"/>';
+    if(svg) svg.innerHTML = '<polygon points="0,0 20,10 0,20"/>';
   }
 }
 
