@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medium Required — Limitations | Doppler Effect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Questrial:wght@400&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../applications/styles/app.css">
+</head>
+<body>
+
+<nav class="app-nav">
+  <div class="app-nav__left">
+    <a href="../../index.html#limitations" class="app-nav__back"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg><span>Back</span></a>
+    <span class="app-nav__badge">02</span>
+  </div>
+  <span class="app-nav__title">Medium Required</span>
+  <div class="app-nav__arrows">
+    <a id="prevBtn" class="app-nav__arrow" href="../low-speed/"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4l-6 6 6 6"/></svg><span>Prev</span></a>
+    <a id="nextBtn" class="app-nav__arrow" href="../wind-interference/"><span>Next</span><svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 4l6 6-6 6"/></svg></a>
+  </div>
+</nav>
+
+<main class="app-page" id="appMain" style="--app-accent:#9B5CFB">
+  <section class="app-hero">
+    <div class="app-hero__bg"></div>
+    <div class="app-hero__inner">
+      <div class="app-hero__text">
+        <span class="app-eyebrow">Limitation 02</span>
+        <h1>Medium Required</h1>
+        <p>Sound waves require a material medium such as air, water, or solids to propagate. In the absence of a medium, sound cannot travel and the acoustic Doppler Effect cannot occur.</p>
+      </div>
+      <div class="app-hero__media">
+        <span class="app-hero__num">02</span>
+        <img src="../../assets/backgrounds/L2.png" alt="Medium Required">
+      </div>
+    </div>
+  </section>
+
+  <div class="app-wrap">
+    <div class="app-glass">
+      <section class="app-section">
+        <h2>Overview</h2>
+        <div class="overview-grid">
+          <div class="overview-item"><span class="overview-label">Category</span><b>Physical Limitation</b></div>
+          <div class="overview-item"><span class="overview-label">Severity</span><b>Very High Error</b></div>
+          <div class="overview-item"><span class="overview-label">Affects</span><b>Sound Propagation</b></div>
+          <div class="overview-item"><span class="overview-label">Applicable To</span><b>Acoustic Doppler Effect</b></div>
+        </div>
+      </section>
+
+      <section class="app-section">
+        <h2>Why This Limitation Exists</h2>
+        <p>Unlike light, sound is a mechanical wave that transfers energy through vibrating particles. Without a material medium, there are no particles available to carry these vibrations. As a result, sound propagation becomes impossible.</p>
+      </section>
+
+      <section class="app-section">
+        <h2>Physical Explanation</h2>
+        <p>Sound travels by creating successive compressions and rarefactions in the surrounding medium. In a vacuum, there are no molecules to transmit these pressure variations. Consequently, no sound waves are produced, and no Doppler frequency shift can be observed.</p>
+      </section>
+
+      <section class="app-section">
+        <h2>Effect on Results</h2>
+        <ul>
+          <li>Sound cannot propagate.</li>
+          <li>Doppler shift cannot be observed.</li>
+          <li>Acoustic experiments fail completely.</li>
+          <li>Frequency measurements become impossible.</li>
+        </ul>
+      </section>
+
+      <section class="app-section">
+        <h2>Real-Life Example</h2>
+        <p>Astronauts working outside a spacecraft cannot hear explosions directly because outer space is essentially a vacuum. Radio communication is required instead of sound.</p>
+      </section>
+
+      <section class="app-section">
+        <h2>How to Reduce This Limitation</h2>
+        <ul>
+          <li>&#10003; Perform experiments in air.</li>
+          <li>&#10003; Use water or another suitable medium.</li>
+          <li>&#10003; Maintain a continuous propagation medium.</li>
+          <li>&#10003; Avoid vacuum environments during measurements.</li>
+        </ul>
+      </section>
+
+      <section class="app-section">
+        <h2>Key Points</h2>
+        <ul>
+          <li>Sound always requires a medium.</li>
+          <li>Vacuum prevents sound propagation.</li>
+          <li>No medium means no Doppler Effect.</li>
+          <li>Applies specifically to sound waves.</li>
+          <li>Mechanical waves cannot travel through empty space.</li>
+        </ul>
+      </section>
+
+      <section class="app-section">
+        <h2>Summary</h2>
+        <div class="summary-box"><p>The Doppler Effect for sound depends entirely on the existence of a material medium. Without air, water, or another transmitting substance, sound cannot propagate, making Doppler observations impossible.</p></div>
+      </section>
+    </div>
+  </div>
+
+  <nav class="app-bottom-nav">
+    <a id="bottomPrev" class="app-bottom-nav__btn" href="../low-speed/">&#8592; Previous Limitation</a>
+    <a href="../../index.html#limitations" class="app-bottom-nav__btn app-bottom-nav__btn--center">Back to Limitations</a>
+    <a id="bottomNext" class="app-bottom-nav__btn" href="../wind-interference/">Next Limitation &#8594;</a>
+  </nav>
+</main>
+
+<script>
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowLeft'){ var a = document.getElementById('prevBtn'); if(a && a.getAttribute('href') && a.getAttribute('href') !== '#') window.location = a.href; }
+    if(e.key === 'ArrowRight'){ var a = document.getElementById('nextBtn'); if(a && a.getAttribute('href') && a.getAttribute('href') !== '#') window.location = a.href; }
+  });
+</script>
+</body>
+</html>
