@@ -27,10 +27,13 @@
     ticking = true;
     requestAnimationFrame(function(){
       var y = window.scrollY;
+      var isOpen = nav.classList.contains('open');
       if(y > 50){
         if(y > lastY){
-          nav.classList.add('nav-hidden');
-          if(toggle) toggle.classList.add('nav-hidden');
+          if(!isOpen){
+            nav.classList.add('nav-hidden');
+            if(toggle) toggle.classList.add('nav-hidden');
+          }
         } else {
           nav.classList.remove('nav-hidden');
           if(toggle) toggle.classList.remove('nav-hidden');
