@@ -3,7 +3,7 @@
    Compact tile showcase — matches the dark futuristic portfolio theme.
    Static presentation (no entrance animations).
    ====================================================================== */
-.applications{padding:130px 0 120px;position:relative;overflow:hidden;
+.applications{padding:130px 0 56px;position:relative;overflow:hidden;
   background:linear-gradient(180deg,#070B18 0%,#05070E 45%,#04060D 100%);
   border-top:1px solid rgba(110,140,255,.07);}
 .applications .wrap{position:relative;z-index:1;}
@@ -143,7 +143,7 @@
 
 /* ============================= BOTTOM INFO BAR ============================= */
 .app-info-bar{
-  margin-top:64px;display:grid;grid-template-columns:repeat(5,1fr);
+  margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);
   border-radius:24px;overflow:hidden;position:relative;
   background:rgba(14,17,30,.55);backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
@@ -151,17 +151,17 @@
   box-shadow:0 28px 70px -34px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.05);
 }
 .app-info-bar__item{
-  display:flex;flex-direction:column;align-items:center;gap:11px;
-  text-align:center;padding:30px 18px;position:relative;
+  display:flex;flex-direction:row;align-items:center;gap:14px;
+  text-align:left;padding:18px 20px;position:relative;
   transition:background .35s ease;
 }
 .app-info-bar__item:hover{background:rgba(255,255,255,.025);}
 .app-info-bar__item:not(:last-child)::after{
-  content:'';position:absolute;right:0;top:24%;height:52%;width:1px;
+  content:'';position:absolute;right:0;top:22%;height:56%;width:1px;
   background:linear-gradient(to bottom,transparent,rgba(255,255,255,.13),transparent);
 }
 .app-info-bar__icon{
-  width:48px;height:48px;border-radius:50%;
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
   color:var(--bar-accent);
   background:color-mix(in srgb,var(--bar-accent) 11%,transparent);
@@ -170,6 +170,7 @@
   transition:box-shadow .35s ease,transform .35s ease;
 }
 .app-info-bar__item:hover .app-info-bar__icon{transform:translateY(-3px);box-shadow:0 0 30px color-mix(in srgb,var(--bar-accent) 44%,transparent);}
-.app-info-bar__icon svg{width:21px;height:21px;}
-.app-info-bar__item b{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--text);}
-.app-info-bar__item small{font-family:'Nunito',sans-serif;font-size:13px;line-height:1.55;color:var(--text-mute);max-width:180px;}
+.app-info-bar__icon svg{width:19px;height:19px;}
+.app-info-bar__text{display:flex;flex-direction:column;min-width:0;}
+.app-info-bar__item b{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--text);display:block;}
+.app-info-bar__item small{font-family:'Nunito',sans-serif;font-size:12px;line-height:1.5;color:var(--text-mute);display:block;margin-top:2px;}

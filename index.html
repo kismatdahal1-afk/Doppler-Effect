@@ -7,12 +7,13 @@
 <meta name="description" content="A premium interactive Class 12 Physics guide to the Doppler Effect — theory, formulas, and nine live, controllable simulations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Questrial:wght@400&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Questrial:wght@400&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/hero.css">
 <link rel="stylesheet" href="css/introduction.css">
 <link rel="stylesheet" href="css/cases.css">
 <link rel="stylesheet" href="css/applications.css">
+<link rel="stylesheet" href="css/limitations.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -193,28 +194,38 @@
     <div class="app-info-bar reveal">
       <div class="app-info-bar__item" style="--bar-accent:#6E8CFF">
         <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 8 4 4-4 4"/><path d="m6 8-4 4 4 4"/><path d="M2 12h20"/></svg></span>
-        <b>Measures Motion</b>
-        <small>Relative movement between source and observer</small>
+        <div class="app-info-bar__text">
+          <b>Measures Motion</b>
+          <small>Relative movement between source and observer</small>
+        </div>
       </div>
       <div class="app-info-bar__item" style="--bar-accent:#2BE8C9">
         <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
-        <b>Calculates Speed</b>
-        <small>Velocity derived from tiny frequency shifts</small>
+        <div class="app-info-bar__text">
+          <b>Calculates Speed</b>
+          <small>Velocity derived from tiny frequency shifts</small>
+        </div>
       </div>
       <div class="app-info-bar__item" style="--bar-accent:#5B9CFF">
         <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg></span>
-        <b>Detects Weather</b>
-        <small>Storms, rainfall and wind direction</small>
+        <div class="app-info-bar__text">
+          <b>Detects Weather</b>
+          <small>Storms, rainfall and wind direction</small>
+        </div>
       </div>
       <div class="app-info-bar__item" style="--bar-accent:#C77DFF">
         <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
-        <b>Medical Imaging</b>
-        <small>Non-invasive blood-flow diagnostics</small>
+        <div class="app-info-bar__text">
+          <b>Medical Imaging</b>
+          <small>Non-invasive blood-flow diagnostics</small>
+        </div>
       </div>
       <div class="app-info-bar__item" style="--bar-accent:#FF7DC7">
         <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><path d="M10.4 21.9a10 10 0 0 0 9.94-15.4"/><path d="M13.5 2.1a10 10 0 0 0-9.84 15.4"/></svg></span>
-        <b>Astronomy</b>
-        <small>Stellar motion and cosmic expansion</small>
+        <div class="app-info-bar__text">
+          <b>Astronomy</b>
+          <small>Stellar motion and cosmic expansion</small>
+        </div>
       </div>
     </div>
   </div>
@@ -222,34 +233,150 @@
 
 <!-- ============================= LIMITATIONS ============================= -->
 <section class="limits" id="limitations">
+  <div class="limits__bg" aria-hidden="true">
+    <span class="limits__glow limits__glow--2"></span>
+    <span class="limits__glow limits__glow--3"></span>
+    <span class="limits__stars"></span>
+    <span class="limits__noise"></span>
+    <span class="limits__vignette"></span>
+  </div>
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">GOOD TO KNOW</span>
-      <h2>Limitations of the model</h2>
-      <p>The classic formulas are a simplification. Here's where they start to break down.</p>
-    </div>
-    <div class="card-grid reveal">
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
-        <h3>Assumes Low Speed</h3>
-        <p>Accurate only when source and observer speeds stay much smaller than the speed of sound.</p>
+
+    <div class="lim-hero">
+      <div class="lim-hero__text reveal">
+        <span class="lim-eyebrow">GOOD TO KNOW</span>
+        <h2 class="lim-title">Limitations of<br>the <em>Model</em></h2>
+        <p class="lim-sub">The Doppler Effect formula works best under ideal conditions. When real-world assumptions fail, prediction accuracy decreases.</p>
       </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
-        <h3>A Medium Is Required</h3>
-        <p>Sound needs air, water, or another medium — the acoustic effect cannot occur in a vacuum.</p>
-      </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
-        <h3>Wind Interference</h3>
-        <p>Moving air changes the effective speed of sound relative to the ground, introducing error.</p>
-      </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
-        <h3>Complex Motion</h3>
-        <p>Curved paths or acceleration make the simple straight-line formulas insufficient.</p>
+
+      <div class="lim-hero__visual reveal">
+        <img class="lim-hero-img" src="assets/backgrounds/top.png" alt="" loading="lazy">
       </div>
     </div>
+
+    <div class="lim-assumptions reveal">
+      <div>
+        <span class="lim-assumptions__title">MODEL ASSUMPTIONS</span>
+        <div class="lim-assumptions__grid">
+          <div class="lim-asm" style="--c:#4F8DFF">
+            <span class="lim-asm__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            <span class="lim-asm__label">Straight Motion</span>
+          </div>
+          <div class="lim-asm" style="--c:#3EC7FF">
+            <span class="lim-asm__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
+            <span class="lim-asm__label">Constant Velocity</span>
+          </div>
+          <div class="lim-asm" style="--c:#37E38C">
+            <span class="lim-asm__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c2.3-2.4 4.7-2.4 7 0s4.7 2.4 7 0 4.7-2.4 7 0"/><path d="M2 14c2.3-2.4 4.7-2.4 7 0s4.7 2.4 7 0 4.7-2.4 7 0"/></svg></span>
+            <span class="lim-asm__label">Medium Exists</span>
+          </div>
+          <div class="lim-asm" style="--c:#FFB84A">
+            <span class="lim-asm__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20a8 8 0 1 1 16 0"/><path d="M12 12l4.5 4.5"/></svg></span>
+            <span class="lim-asm__label">Low Speed</span>
+          </div>
+          <div class="lim-asm" style="--c:#FF5E5E">
+            <span class="lim-asm__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg></span>
+            <span class="lim-asm__label">No Strong Wind</span>
+          </div>
+          <div class="lim-asm" style="--c:#9B5CFB">
+            <span class="lim-asm__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+            <span class="lim-asm__label">Warning</span>
+          </div>
+        </div>
+      </div>
+      <div class="lim-assumptions__note">
+        <span class="lim-assumptions__note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        <p>If these assumptions fail, results become inaccurate.</p>
+      </div>
+    </div>
+
+    <div class="lim-cards">
+      <div class="lim-card reveal" style="--ac:#4F8DFF;--fill:4;transition-delay:.05s">
+        <div class="lim-card__art">
+          <span class="lim-card__num">01</span>
+          <img class="lim-card__img" src="assets/backgrounds/L1.png" alt="Ambulance emitting Doppler waves" loading="lazy">
+        </div>
+        <div class="lim-card__body">
+          <h3>Assumes Low Speed</h3>
+          <p>The formula assumes source and observer speeds remain much smaller than the speed of sound.</p>
+          <div class="lim-card__impact">
+            <span class="lim-card__dots"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="lim-card__impact-label">High Error</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lim-card reveal" style="--ac:#9B5CFB;--fill:5;transition-delay:.1s">
+        <div class="lim-card__art">
+          <span class="lim-card__num">02</span>
+          <img class="lim-card__img" src="assets/backgrounds/L2.png" alt="Sound waves unable to travel in vacuum" loading="lazy">
+        </div>
+        <div class="lim-card__body">
+          <h3>Medium Required</h3>
+          <p>Sound requires a physical medium and cannot travel in vacuum.</p>
+          <div class="lim-card__impact">
+            <span class="lim-card__dots"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="lim-card__impact-label">Very High Error</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lim-card reveal" style="--ac:#3EC7FF;--fill:3;transition-delay:.15s">
+        <div class="lim-card__art">
+          <span class="lim-card__num">03</span>
+          <img class="lim-card__img" src="assets/backgrounds/L3.png" alt="Wind interfering with Doppler waves" loading="lazy">
+        </div>
+        <div class="lim-card__body">
+          <h3>Wind Interference</h3>
+          <p>Wind changes the effective speed of sound and introduces measurement error.</p>
+          <div class="lim-card__impact">
+            <span class="lim-card__dots"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="lim-card__impact-label">Moderate Error</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lim-card reveal" style="--ac:#FF4FB3;--fill:4;transition-delay:.2s">
+        <div class="lim-card__art">
+          <span class="lim-card__num">04</span>
+          <img class="lim-card__img" src="assets/backgrounds/L4.png" alt="Curved motion path of a Doppler source" loading="lazy">
+        </div>
+        <div class="lim-card__body">
+          <h3>Complex Motion</h3>
+          <p>Curved motion and acceleration violate the simple straight-line assumptions.</p>
+          <div class="lim-card__impact">
+            <span class="lim-card__dots"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="lim-card__impact-label">High Error</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lim-summary reveal">
+      <div class="lim-summary__head">
+        <span class="lim-summary__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <div>
+          <h3>The Doppler formula is powerful, but not perfect.</h3>
+          <p>It performs best under ideal simplified conditions.</p>
+        </div>
+      </div>
+      <div class="lim-summary__chain">
+        <span class="lim-summary__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>Straight Motion</span>
+        <svg class="lim-summary__down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        <span class="lim-summary__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>Constant Speed</span>
+        <svg class="lim-summary__down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        <span class="lim-summary__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c2.3-2.4 4.7-2.4 7 0s4.7 2.4 7 0 4.7-2.4 7 0"/></svg>Medium Exists</span>
+        <svg class="lim-summary__down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        <span class="lim-summary__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20a8 8 0 1 1 16 0"/><path d="M12 12l4.5 4.5"/></svg>Low Speed</span>
+        <svg class="lim-summary__down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        <span class="lim-summary__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>Calm Air</span>
+      </div>
+      <div class="lim-summary__warn">
+        <span class="lim-summary__warn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        <p>When assumptions fail, prediction reliability decreases.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
