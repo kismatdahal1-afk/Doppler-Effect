@@ -440,3 +440,38 @@ body{overflow-x:hidden;}
   .case-nav__arrow{padding:6px 10px;font-size:12px;}
   .case-nav{gap:4px;}
 }
+
+/* ============================= MOBILE BOTTOM SHEET (SIM PANEL) ============================= */
+@media (max-width:768px){
+  .case-layout{display:block;min-height:0;}
+  .case-panel{
+    position:static;height:auto;max-height:none;min-height:0;
+    border-right:none;border-bottom:none;
+    padding:24px 18px 26vh;
+  }
+  .sim-panel{
+    position:fixed;left:0;right:0;top:auto;bottom:0;
+    height:100vh;height:100dvh;min-height:0;
+    margin:0;z-index:90;
+    border-radius:18px 18px 0 0;
+    border-top:1px solid rgba(110,140,255,.28);
+    box-shadow:0 -16px 50px rgba(0,0,0,.6);
+    transform:translateY(80%);
+    transition:transform .45s cubic-bezier(.22,.61,.36,1);
+    will-change:transform;
+  }
+  .sim-panel::before{
+    content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);
+    width:44px;height:4px;border-radius:99px;
+    background:rgba(255,255,255,.3);z-index:30;
+  }
+  .sim-panel.open{transform:translateY(0);}
+  .sim-panel.fullscreen{transform:none !important;transition:none;}
+  .sim-canvas-wrap{border-radius:18px 18px 0 0;}
+}
+@media (max-width:480px){
+  .case-panel{padding:20px 14px 24vh;}
+}
+@media (prefers-reduced-motion:reduce){
+  .sim-panel{transition:none;}
+}
