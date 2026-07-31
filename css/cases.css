@@ -1,5 +1,12 @@
 /* ============================= EXPLORE HEADER ============================= */
-.explore{padding:0 0 120px;}
+.explore{padding:0 0 120px;position:relative;overflow:hidden;}
+.explore .wrap{position:relative;z-index:1;}
+.explore-radar{
+  position:absolute;left:50%;top:50%;width:min(760px,92vw);
+  aspect-ratio:1;transform:translate(-50%,-50%);
+  opacity:.4;pointer-events:none;z-index:0;
+}
+.explore-radar .apps-radar__core{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;}
 .explore-head{max-width:720px;margin:0 auto 60px;}
 .explore-head h2{
   font-size:clamp(36px,5vw,56px);line-height:1.08;margin-bottom:18px;
@@ -95,10 +102,7 @@
 
 
 
-/* ============================= APPLICATIONS / LIMITATIONS / CONCLUSION ============================= */
-.apps{padding:0 0 100px;}
-.apps .card-grid{grid-template-columns:repeat(5,1fr);}
-.apps .card p{font-size:14px;}
+/* ============================= LIMITATIONS / CONCLUSION ============================= */
 .limits{padding:0 0 100px;}
 .limits .card-grid{grid-template-columns:repeat(4,1fr);}
 .limits .card__icon{background:rgba(255,193,94,.14);}

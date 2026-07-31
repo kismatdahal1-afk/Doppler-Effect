@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/hero.css">
 <link rel="stylesheet" href="css/introduction.css">
 <link rel="stylesheet" href="css/cases.css">
+<link rel="stylesheet" href="css/applications.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -57,11 +58,36 @@
         <div class="reveal">
           <span class="eyebrow">INTRODUCTION</span>
           <h2>A shift hiding<br><em>in plain hearing</em></h2>
-          <p>First explained by Christian Doppler in 1842, this effect shows up every time you hear a siren pass by — and it works the same way for light, water, and radar waves too.</p>
+          <p>First explained by Christian Doppler in 1842, this effect shows up every time you hear a siren pass by, and it works the same way for light, water, and radar waves too.</p>
         </div>
       </div>
       <div class="intro__visual reveal">
+        <div class="intro-radar" aria-hidden="true">
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__core"></span>
+        </div>
         <img src="assets/images/intro.png" alt="" loading="lazy">
+      </div>
+    </div>
+
+    <div class="intro-wave-wrap" aria-hidden="true">
+      <div class="apps-wave-track">
+        <svg class="apps-wave" viewBox="0 0 300 60" fill="none" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="introWaveGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#6E8CFF" stop-opacity="0"/>
+              <stop offset=".5" stop-color="#6E8CFF"/>
+              <stop offset="1" stop-color="#B279FF" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 30 Q37.5 0 75 30 T150 30 T225 30 T300 30" stroke="url(#introWaveGrad)" stroke-width="2"/>
+        </svg>
+        <svg class="apps-wave" viewBox="0 0 300 60" fill="none" preserveAspectRatio="none">
+          <path d="M0 30 Q37.5 0 75 30 T150 30 T225 30 T300 30" stroke="url(#introWaveGrad)" stroke-width="2"/>
+        </svg>
       </div>
     </div>
 
@@ -70,7 +96,7 @@
         <div class="intro-card__img"><img src="assets/backgrounds/card1.png" alt="" loading="lazy"></div>
         <div class="intro-card__body">
           <h3>What Is It?</h3>
-          <p>The change in the frequency of a wave — sound, light, or radio — that an observer perceives when the source, the observer, or both are moving relative to one another.</p>
+          <p>The change in the frequency of a wave, whether sound, light, or radio, that an observer perceives when the source, the observer, or both are moving relative to one another.</p>
           <span class="intro-card__badge" style="background:rgba(110,140,255,.15);color:#6E8CFF">Change in frequency</span>
         </div>
       </div>
@@ -78,7 +104,7 @@
         <div class="intro-card__img"><img src="assets/backgrounds/card2.png" alt="" loading="lazy"></div>
         <div class="intro-card__body">
           <h3>Why Does It Occur?</h3>
-          <p>Motion changes the spacing between successive wavefronts — compressed ahead of a moving source, stretched out behind it.</p>
+          <p>Motion changes the spacing between successive wavefronts, compressed ahead of a moving source and stretched out behind it.</p>
           <span class="intro-card__badge" style="background:rgba(43,232,201,.15);color:#2BE8C9">Relative motion</span>
         </div>
       </div>
@@ -86,7 +112,7 @@
         <div class="intro-card__img"><img src="assets/backgrounds/card3.png" alt="" loading="lazy"></div>
         <div class="intro-card__body">
           <h3>Why It Matters</h3>
-          <p>It's one of the few physics ideas you use daily without noticing — and it underpins radar, ultrasound, and how we measure the universe.</p>
+          <p>It's one of the few physics ideas you use daily without noticing, and it underpins radar, ultrasound, and how we measure the universe.</p>
           <span class="intro-card__badge" style="background:rgba(255,193,94,.15);color:#FFC15E">Powerful real-world impact</span>
         </div>
       </div>
@@ -94,7 +120,7 @@
         <div class="intro-card__img"><img src="assets/backgrounds/card4.png" alt="" loading="lazy"></div>
         <div class="intro-card__body">
           <h3>Where You'll Hear It</h3>
-          <p>Sirens, trains, radar guns, weather forecasting, and medical ultrasound all rely on it — explored in detail further down this page.</p>
+          <p>Sirens, trains, radar guns, weather forecasting, and medical ultrasound all rely on it, explored in detail further down this page.</p>
           <span class="intro-card__badge" style="background:rgba(199,125,255,.15);color:#C77DFF">All around you</span>
         </div>
       </div>
@@ -106,6 +132,13 @@
 
 <!-- ============================= CASE EXPLORER ============================= -->
 <section class="explore" id="explore">
+  <div class="explore-radar" aria-hidden="true">
+    <span class="apps-radar__ring"></span>
+    <span class="apps-radar__ring"></span>
+    <span class="apps-radar__ring"></span>
+    <span class="apps-radar__ring"></span>
+    <span class="apps-radar__core"></span>
+  </div>
   <div class="wrap">
     <div class="section-head reveal explore-head" style="text-align:center">
       <h2>Explore Interactive Cases</h2>
@@ -117,38 +150,71 @@
 </section>
 
 <!-- ============================= APPLICATIONS ============================= -->
-<section class="apps" id="applications">
+<section class="applications" id="applications">
+  <div class="applications__bg"><span></span><span></span><span></span></div>
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">REAL-WORLD USE</span>
-      <h2>Applications &amp; examples</h2>
-      <p>Beyond the classroom, the same shift is engineered into instruments that measure speed, weather, and even the flow of blood.</p>
+    <div class="apps-head">
+      <div class="apps-head__text reveal">
+        <span class="apps-eyebrow">REAL-WORLD APPLICATIONS</span>
+        <h2 class="apps-title">Applications &amp;<br><em>Examples</em></h2>
+        <p class="apps-desc">Discover how the Doppler Effect extends beyond the classroom into everyday life, modern technology, medicine, transportation, and weather science. Explore five real-world applications that demonstrate how changes in frequency help us understand and measure motion.</p>
+      </div>
+      <div class="apps-visual reveal">
+        <div class="apps-radar" aria-hidden="true">
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__ring"></span>
+          <span class="apps-radar__core"></span>
+        </div>
+      </div>
     </div>
-    <div class="card-grid reveal">
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE8C9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V9a2 2 0 0 1 2-2h6l4 4h4a2 2 0 0 1 2 2v3"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/><path d="M9 11V6"/></svg></div>
-        <h3>Ambulance Sirens</h3>
-        <p>The siren sounds sharp and high as an ambulance approaches, then drops noticeably the moment it passes and pulls away.</p>
+
+    <div class="apps-wave-wrap" aria-hidden="true">
+      <div class="apps-wave-track">
+        <svg class="apps-wave" viewBox="0 0 300 60" fill="none" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="appsWaveGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#6E8CFF" stop-opacity="0"/>
+              <stop offset=".5" stop-color="#6E8CFF"/>
+              <stop offset="1" stop-color="#B279FF" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 30 Q37.5 0 75 30 T150 30 T225 30 T300 30" stroke="url(#appsWaveGrad)" stroke-width="2"/>
+        </svg>
+        <svg class="apps-wave" viewBox="0 0 300 60" fill="none" preserveAspectRatio="none">
+          <path d="M0 30 Q37.5 0 75 30 T150 30 T225 30 T300 30" stroke="url(#appsWaveGrad)" stroke-width="2"/>
+        </svg>
       </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6B5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="10" rx="2"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/><path d="M4 11h16"/></svg></div>
-        <h3>Passing Trains</h3>
-        <p>A train whistle rises as it nears a platform and falls as it rushes past — a live Doppler curve you can hear.</p>
+    </div>
+
+    <div class="app-grid" id="appGrid"></div>
+
+    <div class="app-info-bar reveal">
+      <div class="app-info-bar__item" style="--bar-accent:#6E8CFF">
+        <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 8 4 4-4 4"/><path d="m6 8-4 4 4 4"/><path d="M2 12h20"/></svg></span>
+        <b>Measures Motion</b>
+        <small>Relative movement between source and observer</small>
       </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5B9CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 12 4 8"/><path d="M8 5a9 9 0 0 1 0 14"/><path d="M11 8.5a4 4 0 0 1 0 7"/></svg></div>
-        <h3>Police Radar Guns</h3>
-        <p>Radar bounces microwaves off a moving car; the frequency shift in the return signal reveals its exact speed.</p>
+      <div class="app-info-bar__item" style="--bar-accent:#2BE8C9">
+        <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
+        <b>Calculates Speed</b>
+        <small>Velocity derived from tiny frequency shifts</small>
       </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9B7BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15a4 4 0 1 1 1-7.9A5 5 0 0 1 18 9a3.5 3.5 0 0 1-.5 6.9H7Z"/><path d="M8 19l1.5-2M12 19l1.5-2M16 19l1.5-2"/></svg></div>
-        <h3>Weather Radar</h3>
-        <p>Meteorologists track shifts in reflected radar pulses to map wind speed, storm rotation, and rainfall.</p>
+      <div class="app-info-bar__item" style="--bar-accent:#5B9CFF">
+        <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg></span>
+        <b>Detects Weather</b>
+        <small>Storms, rainfall and wind direction</small>
       </div>
-      <div class="card glass">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF7DC7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
-        <h3>Medical Ultrasound</h3>
-        <p>Doppler ultrasound reads the frequency shift of sound reflecting off moving blood cells to visualise blood flow.</p>
+      <div class="app-info-bar__item" style="--bar-accent:#C77DFF">
+        <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+        <b>Medical Imaging</b>
+        <small>Non-invasive blood-flow diagnostics</small>
+      </div>
+      <div class="app-info-bar__item" style="--bar-accent:#FF7DC7">
+        <span class="app-info-bar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><path d="M10.4 21.9a10 10 0 0 0 9.94-15.4"/><path d="M13.5 2.1a10 10 0 0 0-9.84 15.4"/></svg></span>
+        <b>Astronomy</b>
+        <small>Stellar motion and cosmic expansion</small>
       </div>
     </div>
   </div>
@@ -250,5 +316,7 @@
 <script src="js/hero.js"></script>
 <script src="js/cases-data.js"></script>
 <script src="js/cases-ui.js"></script>
+<script src="js/applications-data.js"></script>
+<script src="js/applications.js"></script>
 </body>
 </html>
