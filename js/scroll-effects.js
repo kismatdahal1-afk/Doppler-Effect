@@ -18,6 +18,7 @@
      ====================================================================== */
 (function(){
   var nav = document.querySelector('.nav-buttons');
+  var toggle = document.querySelector('.nav-toggle');
   if(!nav) return;
   var lastY = window.scrollY;
   var ticking = false;
@@ -27,10 +28,16 @@
     requestAnimationFrame(function(){
       var y = window.scrollY;
       if(y > 50){
-        if(y > lastY){ nav.classList.add('nav-hidden'); }
-        else { nav.classList.remove('nav-hidden'); }
+        if(y > lastY){
+          nav.classList.add('nav-hidden');
+          if(toggle) toggle.classList.add('nav-hidden');
+        } else {
+          nav.classList.remove('nav-hidden');
+          if(toggle) toggle.classList.remove('nav-hidden');
+        }
       } else {
         nav.classList.remove('nav-hidden');
+        if(toggle) toggle.classList.remove('nav-hidden');
       }
       lastY = y;
       ticking = false;

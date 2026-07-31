@@ -15,6 +15,7 @@
 
   function open(){
     nav.classList.remove('nav-hidden');
+    toggle.classList.remove('nav-hidden');
     toggle.classList.add('open');
     nav.classList.add('open');
     toggle.setAttribute('aria-expanded','true');
@@ -31,10 +32,11 @@
     a.addEventListener('click', close);
   });
 
-  /* tapping outside the menu closes it */
+  /* tapping anywhere that is not a menu link or the toggle closes it */
   document.addEventListener('click', function(e){
     if(!nav.classList.contains('open')) return;
-    if(nav.contains(e.target) || toggle.contains(e.target)) return;
+    if(toggle.contains(e.target)) return;
+    if(e.target.closest && e.target.closest('a')) return;
     close();
   });
 
@@ -45,6 +47,9 @@
 
   /* keep an open menu visible while scrolling */
   window.addEventListener('scroll', function(){
-    if(nav.classList.contains('open')) nav.classList.remove('nav-hidden');
+    if(nav.classList.contains('open')){
+      nav.classList.remove('nav-hidden');
+      toggle.classList.remove('nav-hidden');
+    }
   });
 })();
