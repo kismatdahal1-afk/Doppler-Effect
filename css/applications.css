@@ -126,7 +126,7 @@
   color:var(--app-accent);
   background:rgba(8,11,20,.58);backdrop-filter:blur(10px);
   border:1px solid color-mix(in srgb,var(--app-accent) 45%,transparent);
-  box-shadow:0 8px 24px rgba(0,0,0,.5),0 0 18px color-mix(in srgb,var(--app-accent) 40%,transparent);
+  box-shadow:0 8px 24px rgba(0,0,0,.5);
   transition:box-shadow .3s ease;
 }
 .app-card:hover .app-card__num{box-shadow:0 8px 26px rgba(0,0,0,.5),0 0 26px color-mix(in srgb,var(--app-accent) 60%,transparent);}

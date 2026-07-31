@@ -59,7 +59,7 @@
 
 /* ---------- assumption panel ---------- */
 .lim-assumptions{
-  display:grid;grid-template-columns:1.55fr auto;gap:36px;align-items:stretch;
+  display:grid;grid-template-columns:1fr;gap:32px;align-items:stretch;
   margin-bottom:56px;padding:0 0 0 40px;border-radius:26px;
   background:linear-gradient(150deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
   backdrop-filter:blur(22px) saturate(140%);
@@ -95,7 +95,7 @@
 }
 .lim-assumptions__note{
   display:flex;flex-direction:column;justify-content:center;gap:8px;
-  width:270px;margin-left:8px;padding:14px 18px;border-radius:14px 26px 26px 14px;position:relative;overflow:hidden;
+  width:auto;margin:6px 0 0;padding:14px 18px;border-radius:14px 26px 26px 14px;position:relative;overflow:hidden;
   background:linear-gradient(160deg,rgba(255,190,60,.14),rgba(255,190,60,.03) 60%);
   border:1px solid rgba(255,198,77,.4);
   box-shadow:0 16px 40px -20px rgba(255,190,60,.35), inset 0 1px 0 rgba(255,255,255,.05);
@@ -154,7 +154,6 @@
   font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--ac);
   border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);
   background:rgba(5,8,20,.55);
-  box-shadow:0 0 16px color-mix(in srgb,var(--ac) 30%,transparent);
 }
 .lim-card__img{
   width:100%;height:100%;object-fit:cover;display:block;
@@ -172,7 +171,7 @@
 }
 .lim-card__dots{display:inline-flex;gap:5px;}
 .lim-card__dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.1);transition:background .3s ease,box-shadow .3s ease;}
-.lim-card__dots i:nth-child(-n + var(--fill)){background:var(--ac);box-shadow:0 0 8px var(--ac);}
+.lim-card__dots i:nth-child(-n + var(--fill)){background:var(--ac);}
 .lim-card__impact-label{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;color:var(--ac);white-space:nowrap;}
 .lim-card:hover .lim-card__dots i{background:color-mix(in srgb,var(--ac) 45%,rgba(255,255,255,.1));}
 .lim-card:hover .lim-card__dots i:nth-child(-n + var(--fill)){background:var(--ac);box-shadow:0 0 12px var(--ac);}
