@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Doppler Effect â€” Interactive Physics Lab</title>
-<meta name="description" content="A premium interactive Class 12 Physics guide to the Doppler Effect â€” theory, formulas, and nine live, controllable simulations.">
+<title>The Doppler Effect &mdash; Interactive Physics Lab</title>
+<meta name="description" content="A premium interactive Class 12 Physics guide to the Doppler Effect &mdash; theory, formulas, and nine live, controllable simulations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Questrial:wght@400&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
     <h1>The Doppler Effect</h1>
     <p class="hero__sub">Discover how motion transforms the way sound is perceived through immersive simulations, intuitive visualizations, mathematical derivations, and real-world applications, all in one interactive learning experience.</p>
     <div class="hero__actions">
-      <a href="#explore" class="btn">Launch Simulation â†“</a>
+      <a href="#explore" class="btn">Launch Simulation <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/></svg></a>
       <a href="#applications" class="btn btn--ghost">Explore Applications</a>
     </div>
     <div class="hero__meta">Designed &amp; Developed by<br><span class="author">Kismat Dahal</span></div>
@@ -236,10 +236,15 @@
 <section class="limits" id="limitations">
   <div class="limits__bg" aria-hidden="true">
     <span class="limits__glow limits__glow--2"></span>
-    <span class="limits__glow limits__glow--3"></span>
     <span class="limits__stars"></span>
     <span class="limits__noise"></span>
     <span class="limits__vignette"></span>
+    <svg class="limits__wave" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 78c150-48 300-48 450 0s300 48 450 0 250-56 350-70" fill="none" stroke="rgba(79,141,255,.22)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <svg class="limits__wave limits__wave--2" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 95c200-55 400-55 600 0s250 42 400 25" fill="none" stroke="rgba(155,92,251,.18)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
   </div>
   <div class="wrap">
 
@@ -442,34 +447,40 @@
 <footer>
   <div class="wrap">
     <div class="footer__grid">
-      <div>
-        <div class="footer__brand"><span class="nav__brand-dot"></span>Doppler Effect Lab</div>
-        <p>An interactive Class 12 Physics learning experience â€” combining an original presentation with a live, controllable wave simulation across nine Doppler effect scenarios.</p>
+      <div class="footer__col">
+        <span class="footer__col-head">Designed &amp; Developed by</span>
+        <span class="footer__col-name">Kismat Dahal</span>
+        <span class="footer__col-sub">Student | curious learner</span>
       </div>
-      <div>
-        <h4>Technologies Used</h4>
-        <div class="tech-chips">
-          <span class="tech-chip">HTML5</span>
-          <span class="tech-chip">CSS3</span>
-          <span class="tech-chip">JavaScript</span>
-          <span class="tech-chip">Physics Simulation</span>
-          <span class="tech-chip">Responsive Design</span>
-        </div>
+      <div class="footer__col">
+        <span class="footer__col-head">Project Highlights</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>10 Interactive Cases</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Real World Applications</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Model Limitations</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Responsive Learning Experience</span>
       </div>
-      <div>
-        <h4>Project</h4>
-        <div class="footer__links">
-          <span>Built by Kismat Dahal â€” Class 12 Physics portfolio project.</span>
-          <a href="#" class="gh-btn" title="Add your repository link here">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.2.67.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            View on GitHub
-          </a>
-        </div>
+      <div class="footer__col">
+        <span class="footer__col-head">Learning Goals</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Understand Wave Motion</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Visualize Frequency Shift</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Explore Practical Uses</span>
+        <span class="footer__col-item"><svg class="footer__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Learn Through Simulation</span>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-head">Connect</span>
+        <a href="https://github.com/kismatdahal1-afk" target="_blank" rel="noopener" class="footer__link">
+          <svg viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.2.67.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/kisma_tt07/" target="_blank" rel="noopener" class="footer__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Instagram
+        </a>
       </div>
     </div>
-    <div class="footer__bottom">
-      <span>Â© 2026 Doppler Effect Interactive Lab. Built for educational use.</span>
-      <a href="#top" class="back-to-top">Back to top â†‘</a>
+    <div class="footer__bar">
+      <span class="footer__copy">&copy; 2026 Doppler Effect Interactive Lab</span>
+      <span class="footer__tagline">Designed for learning. Built with curiosity.</span>
     </div>
   </div>
 </footer>
