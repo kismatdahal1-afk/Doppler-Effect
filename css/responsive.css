@@ -54,10 +54,10 @@
 }
 @media (max-width:620px){
   .lim-cards{grid-template-columns:1fr;}
-  .lim-assumptions__grid{grid-template-columns:repeat(2,1fr);}
+  .lim-assumptions__grid{grid-template-columns:repeat(3,1fr);gap:12px;}
   .lim-assumptions{padding:0 24px;}
 }
-@media (max-width:440px){.lim-assumptions__grid{grid-template-columns:1fr;}}
+@media (max-width:440px){.lim-assumptions__grid{grid-template-columns:repeat(3,1fr);}}
 
 /* conclusion */
 @media (max-width:1024px){
