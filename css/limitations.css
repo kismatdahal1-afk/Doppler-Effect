@@ -124,7 +124,7 @@
 .lim-assumptions__note p{color:#F5E6C8;font-size:12px;line-height:1.5;font-weight:500;}
 
 /* ---------- limitation cards ---------- */
-.lim-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:84px;}
+.lim-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
 .lim-card{
   --ac:#4F8DFF;
   position:relative;border-radius:24px;overflow:hidden;

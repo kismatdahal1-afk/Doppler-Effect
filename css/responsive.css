@@ -54,7 +54,4 @@
   .conclusion__desc{margin:0 auto;text-align:left;}
   .conclusion__quote{text-align:left;}
   .conclusion__cards{max-width:440px;margin:0 auto;}
-  .conclusion__divider{margin-bottom:70px;}
-  .conclusion__cta-btns{flex-direction:column;}
-  .conclusion__btn{width:100%;max-width:340px;}
 }
