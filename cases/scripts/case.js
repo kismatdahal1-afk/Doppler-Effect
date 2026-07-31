@@ -213,9 +213,9 @@
       html += renderField(order[i], data[order[i]]);
     }
 
-    html += '<button class="download-btn" onclick="alert(\'PDF download coming soon\')">'+
+    html += '<a class="download-btn" href="../assets/docs/Doppler-Effect.pdf" target="_blank" rel="noopener">'+
       '<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14V3M6 10l4 4 4-4M3 14v3h14v-3"/></svg>'+
-      'Download PDF Notes</button>';
+      'Download PDF Notes</a>';
 
     document.getElementById('caseContent').innerHTML = html;
 

@@ -217,6 +217,7 @@ body{overflow-x:hidden;}
   padding:10px 22px;border-radius:999px;
   border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.03);color:rgba(255,255,255,.7);cursor:pointer;
+  text-decoration:none;
   transition:all .2s ease;margin-top:32px;
 }
 .download-btn:hover{background:rgba(110,140,255,.1);border-color:rgba(110,140,255,.2);color:var(--blue);}
