@@ -84,7 +84,6 @@
   display:flex;align-items:center;justify-content:center;
   background:color-mix(in srgb,var(--c) 11%,transparent);
   border:1px solid color-mix(in srgb,var(--c) 34%,transparent);
-  box-shadow:0 0 20px color-mix(in srgb,var(--c) 26%,transparent);
   transition:box-shadow .35s ease,transform .35s ease;
 }
 .lim-asm__icon svg{width:19px;height:19px;stroke:var(--c);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
@@ -113,14 +112,15 @@
   position:relative;width:30px;height:30px;border-radius:10px;
   display:flex;align-items:center;justify-content:center;
   border:1px solid rgba(255,198,77,.5);background:rgba(255,190,60,.16);
-  box-shadow:0 0 18px rgba(255,190,60,.45);
+  transition:box-shadow .35s ease;
 }
 .lim-assumptions__note-icon::after{
   content:"";position:absolute;inset:-7px;border-radius:14px;
   background:radial-gradient(circle,rgba(255,190,60,.35),transparent 70%);
-  filter:blur(6px);opacity:.6;pointer-events:none;
-  animation:limAsmPulse 3s ease-in-out infinite .8s;
+  filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s ease;
 }
+.lim-assumptions__note:hover .lim-assumptions__note-icon{box-shadow:0 0 24px rgba(255,190,60,.5);}
+.lim-assumptions__note:hover .lim-assumptions__note-icon::after{opacity:.6;animation:limAsmPulse 3s ease-in-out infinite .8s;}
 .lim-assumptions__note-icon svg{width:15px;height:15px;stroke:#FFC94A;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1;}
 .lim-assumptions__note p{color:#F5E6C8;font-size:12px;line-height:1.5;font-weight:500;}
 
