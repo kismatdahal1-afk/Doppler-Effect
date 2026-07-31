@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/cases.css">
 <link rel="stylesheet" href="css/applications.css">
 <link rel="stylesheet" href="css/limitations.css">
+<link rel="stylesheet" href="css/conclusion.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -360,17 +361,88 @@
 
 <!-- ============================= CONCLUSION ============================= -->
 <section class="conclusion" id="conclusion">
+  <div class="conclusion__bg"><span></span><span></span>
+    <svg viewBox="0 0 720 80" preserveAspectRatio="none" stroke-width="2"><path d="M0 60 Q 90 0 180 60 T 360 60 T 540 60 T 720 60"/></svg>
+    <svg viewBox="0 0 720 80" preserveAspectRatio="none" stroke-width="2"><path d="M0 60 Q 90 0 180 60 T 360 60 T 540 60 T 720 60"/></svg>
+  </div>
   <div class="wrap">
-    <div class="conclusion__box glass reveal">
-      <div>
-        <span class="eyebrow">CONCLUSION</span>
-        <h2>One idea, heard everywhere</h2>
-        <p>From a passing ambulance to the redshifted light of a distant galaxy, the Doppler effect is the same simple idea wearing different clothes: motion changes what a wave looks like to whoever receives it. Nine cases, one master formula â€” and once the sign convention clicks, every siren, whistle, and radar reading on this page becomes predictable rather than mysterious.</p>
+    <div class="conclusion__grid">
+      <div class="conclusion__left">
+        <span class="eyebrow reveal">CONCLUSION</span>
+        <h2 class="conclusion__title">
+          <span class="reveal">The Journey Ends.</span>
+          <span class="reveal" style="transition-delay:.12s">The Understanding Begins.</span>
+        </h2>
+        <div class="conclusion__desc reveal" style="transition-delay:.2s">
+          <p>You explored how motion changes the frequency of sound through interactive simulations and real world examples.</p>
+          <p>From stationary objects to moving sources and observers, every case revealed the same physical principle.</p>
+          <p>You discovered how the Doppler Effect is used in transportation, weather forecasting, medical imaging, and speed detection.</p>
+          <p>Every situation may look different, but they all follow one simple idea.</p>
+          <p><strong>Motion changes how waves are observed.</strong></p>
+          <p>The Doppler Effect is now a concept you can visualize, understand, and confidently apply.</p>
+        </div>
+        <blockquote class="conclusion__quote reveal" style="transition-delay:.28s">
+          <p class="conclusion__quote-main">One Principle. Infinite Applications.</p>
+          <p class="conclusion__quote-sub">Every wave tells a different story <svg class="conclusion__quote-link" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> only motion changes the language.</p>
+        </blockquote>
       </div>
-      <div class="conclusion__stats">
-        <div class="stat"><b>1842</b><span>First described by Christian Doppler</span></div>
-        <div class="stat"><b>9</b><span>Motion cases simulated on this page</span></div>
-        <div class="stat"><b>1</b><span>Formula governs every one of them</span></div>
+      <aside class="conclusion__right">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#FFE9A8"/>
+            <stop offset=".5" stop-color="#F5B830"/>
+            <stop offset="1" stop-color="#C98A1B"/>
+          </linearGradient>
+        </defs></svg>
+        <div class="conclusion__cards">
+          <div class="conclusion__card reveal" style="transition-delay:.1s">
+            <span class="conclusion__card-icon"><img src="assets/icons/checked.png" alt="" width="56" height="56"></span>
+            <b class="conclusion__card-num">1842</b>
+            <span class="conclusion__card-title">Christian Doppler</span>
+            <span class="conclusion__card-desc">Published the Theory</span>
+          </div>
+          <div class="conclusion__card reveal" style="transition-delay:.16s">
+            <span class="conclusion__card-icon"><img src="assets/icons/checked.png" alt="" width="56" height="56"></span>
+            <b class="conclusion__card-num">10</b>
+            <span class="conclusion__card-title">Interactive Cases</span>
+            <span class="conclusion__card-desc">Successfully Explored</span>
+          </div>
+          <div class="conclusion__card reveal" style="transition-delay:.22s">
+            <span class="conclusion__card-icon"><img src="assets/icons/checked.png" alt="" width="56" height="56"></span>
+            <b class="conclusion__card-num">5</b>
+            <span class="conclusion__card-title">Real-World Applications</span>
+            <span class="conclusion__card-desc">Discovered</span>
+          </div>
+          <div class="conclusion__card reveal" style="transition-delay:.28s">
+            <span class="conclusion__card-icon"><img src="assets/icons/checked.png" alt="" width="56" height="56"></span>
+            <b class="conclusion__card-num">4</b>
+            <span class="conclusion__card-title">Model Limitations</span>
+            <span class="conclusion__card-desc">Understood</span>
+          </div>
+          <div class="conclusion__card reveal" style="transition-delay:.34s">
+            <span class="conclusion__card-icon"><img src="assets/icons/checked.png" alt="" width="56" height="56"></span>
+            <b class="conclusion__card-num">1</b>
+            <span class="conclusion__card-title">Universal Principle</span>
+            <span class="conclusion__card-desc">Behind Every Case</span>
+          </div>
+          <div class="conclusion__card reveal" style="transition-delay:.4s">
+            <span class="conclusion__card-icon"><img src="assets/icons/checked.png" alt="" width="56" height="56"></span>
+            <b class="conclusion__card-num">Complete</b>
+            <span class="conclusion__card-title">Learning Journey</span>
+            <span class="conclusion__card-desc">Finished</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="conclusion__divider"></div>
+
+    <div class="conclusion__cta reveal">
+      <h3>Continue Exploring Physics</h3>
+      <p>Great discoveries begin with curiosity.<br>Replay the simulations, revisit the theory, or explore the real-world applications once again.</p>
+      <div class="conclusion__cta-btns">
+        <a href="#explore" class="conclusion__btn conclusion__btn--primary">Launch Simulations <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/></svg></a>
+        <a href="#applications" class="conclusion__btn conclusion__btn--ghost">Explore Applications</a>
       </div>
     </div>
   </div>

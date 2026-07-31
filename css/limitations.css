@@ -2,7 +2,7 @@
 .limits{
   --lim-blue:#4F8DFF;--lim-purple:#9B5CFB;--lim-pink:#FF4FB3;
   --lim-cyan:#3EC7FF;--lim-green:#37E38C;--lim-orange:#FFB84A;--lim-red:#FF5E5E;
-  position:relative;padding:72px 0 120px;overflow:hidden;
+  position:relative;padding:72px 0 0;overflow:hidden;
   font-family:'Inter',var(--font-body);
   background:
     radial-gradient(1100px 620px at 12% -6%,rgba(155,92,251,.14),transparent 60%),

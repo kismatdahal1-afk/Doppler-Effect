@@ -43,4 +43,18 @@
 @media (max-width:440px){.lim-assumptions__grid{grid-template-columns:1fr;}}
 
 /* conclusion */
-@media (max-width:820px){.conclusion__box{grid-template-columns:1fr;padding:34px 26px;}}
+@media (max-width:1024px){
+  .conclusion__grid{grid-template-columns:1fr;gap:56px;margin-bottom:80px;}
+  .conclusion__right{margin-top:0;}
+}
+@media (max-width:620px){
+  .conclusion{padding:96px 0 90px;}
+  .conclusion__grid{text-align:center;}
+  .conclusion__left .eyebrow{justify-content:center;}
+  .conclusion__desc{margin:0 auto;text-align:left;}
+  .conclusion__quote{text-align:left;}
+  .conclusion__cards{max-width:440px;margin:0 auto;}
+  .conclusion__divider{margin-bottom:70px;}
+  .conclusion__cta-btns{flex-direction:column;}
+  .conclusion__btn{width:100%;max-width:340px;}
+}
