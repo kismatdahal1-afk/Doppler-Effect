@@ -17,6 +17,11 @@
   var WAVE_GLOW   = '#22D3EE';
   var CURSOR      = '#22D3EE';
 
+  // inline SVG icons (consistent with the site's control buttons) — no emoji
+  // glyphs, so they render crisply on mobile instead of as emoji.
+  var ICON_PLAY  = '<svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5 3l12 7-12 7z"/></svg>';
+  var ICON_PAUSE = '<svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><rect x="3.5" y="3" width="5" height="14" rx="1.5"/><rect x="11.5" y="3" width="5" height="14" rx="1.5"/></svg>';
+
   var refs = {
     card: null, btn: null, btnIcon: null, btnLabel: null,
     canvas: null, ctx: null, dur: null, audio: null
@@ -47,7 +52,7 @@
       +     '</div>'
       +   '</div>'
       +   '<button type="button" id="sonicBoomPlayBtn" class="sonic-audio__play" aria-label="Play sonic boom audio">'
-      +     '<span id="sonicBoomBtnIcon">\u25B6</span>'
+      +     '<span id="sonicBoomBtnIcon" aria-hidden="true">' + ICON_PLAY + '</span>'
       +     '<span id="sonicBoomBtnText">Play Sonic Boom</span>'
       +   '</button>'
       +   '<div class="sonic-audio__wave-wrap">'
@@ -345,7 +350,7 @@
   }
 
   function setButton(playing) {
-    if (refs.btnIcon)  refs.btnIcon.textContent  = playing ? '\u23F8' : '\u25B6';
+    if (refs.btnIcon)  refs.btnIcon.innerHTML  = playing ? ICON_PAUSE : ICON_PLAY;
     if (refs.btnLabel) refs.btnLabel.textContent = playing ? 'Pause' : 'Play Sonic Boom';
     if (refs.btn)      refs.btn.setAttribute('aria-label', playing ? 'Pause audio' : 'Play sonic boom audio');
   }
