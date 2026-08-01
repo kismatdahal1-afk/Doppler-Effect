@@ -2,9 +2,7 @@
    CASE DATA
    Physics content adapted from the original presentation. Standard
    convention: v = speed of sound, vs = source speed, vo = observer speed.
-   ====================================================================== */
-var CASE_IMAGES = {2:"assets/slides/slide2.png",3:"assets/slides/slide3.png",4:"assets/slides/slide4.png",5:"assets/slides/slide5.png",6:"assets/slides/slide6.png",7:"assets/slides/slide7.png",8:"assets/slides/slide8.png",9:"assets/slides/slide9.png"};
-
+    ====================================================================== */
 var CASES = {
   1:{
     roman:"I", color:"var(--c1)",
