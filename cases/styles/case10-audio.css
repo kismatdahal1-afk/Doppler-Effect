@@ -125,7 +125,7 @@
     gap: 16px;
   }
   .sonic-audio__play {
-    width: 100%;
+    width: auto;               /* shrink to content width, like desktop */
     padding: 13px 20px;
     font-size: 14px;
   }
