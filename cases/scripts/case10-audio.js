@@ -171,8 +171,12 @@
     var r = cv.getBoundingClientRect();
     var w = Math.max(1, Math.round(r.width * dpr));
     var h = Math.max(1, Math.round(r.height * dpr));
+    // NOTE: no ctx.setTransform(dpr,...) here. Setting cv.width/cv.height
+    // resets the transform to identity, so all drawing below (waveform, cursor)
+    // happens in PHYSICAL pixels — consistent with `half = cv.height / 2`, so the
+    // wave stays centered on every device. A dpr transform would double-scale the
+    // amplitude on hi-DPI (mobile) screens and push the lower half off-canvas.
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
-    if (refs.ctx) refs.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   function clearCanvas() {
