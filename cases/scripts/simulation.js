@@ -41,7 +41,15 @@ function simSetPositions(n){
   else if([2,4,6].indexOf(n)!==-1){ sim.source.x=50; sim.observer.x=sim.W-50; }
   else if(n===7){ sim.source.x=mid-80; sim.observer.x=mid+80; }
   else if(n===8){ sim.source.x=mid-60; sim.observer.x=mid+40; }
-  else if(n===9){ sim.source.x=mid+70; sim.observer.x=sim.source.x+7*PX_PER_CM; }
+  else if(n===9){
+    if(sim.W < 480){
+      var gap = Math.max(60, Math.min(7 * PX_PER_CM, sim.W * 0.28));
+      sim.source.x = Math.max(gap / 2, Math.min(mid + 70, sim.W - gap - 40));
+      sim.observer.x = sim.source.x + gap;
+    }else{
+      sim.source.x = mid+70; sim.observer.x = sim.source.x+7*PX_PER_CM;
+    }
+  }
   else if(n===10){ sim.source.x=50; sim.observer.x=sim.W-50; }
   else { sim.source.x=mid-40; sim.observer.x=mid+40; }
 }
