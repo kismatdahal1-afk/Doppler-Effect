@@ -69,13 +69,37 @@
     fsBtn.setAttribute('aria-label', fs ? 'Exit fullscreen' : 'Enter fullscreen');
   }
 
+  var autoPaused = false;
+
   function togglePlay(){
     if(video.paused){
       var p = video.play();
       if(p && p.catch) p.catch(function(){});
     } else {
+      autoPaused = false;
       video.pause();
     }
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(document.fullscreenElement || document.webkitFullscreenElement) return;
+        if(entry.isIntersecting){
+          if(autoPaused && video.paused && !video.ended){
+            autoPaused = false;
+            var p = video.play();
+            if(p && p.catch) p.catch(function(){});
+          }
+        } else {
+          if(!video.paused && !video.ended){
+            video.pause();
+            autoPaused = true;
+          }
+        }
+      });
+    },{threshold:0});
+    io.observe(wrap);
   }
 
   if(centerBtn) centerBtn.addEventListener('click', function(e){ e.preventDefault(); togglePlay(); });
@@ -93,6 +117,7 @@
   video.addEventListener('play', syncPlayIcon);
   video.addEventListener('pause', syncPlayIcon);
   video.addEventListener('ended', function(){
+    autoPaused = false;
     video.currentTime = 0;
     video.pause();
   });
