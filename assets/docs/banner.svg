@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="420" viewBox="0 0 1600 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <radialGradient id="titleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.35"/>
+      <stop offset="55%" stop-color="#1D4ED8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#22D3EE" flood-opacity="0.55" result="glowColor"/>
+      <feComposite in="glowColor" in2="blur" operator="in" result="softGlow"/>
+      <feMerge>
+        <feMergeNode in="softGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <circle id="waveRing" cx="0" cy="0" r="1" fill="none" stroke="#38BDF8" stroke-width="2.5" filter="url(#glow)"/>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1600" height="420" fill="url(#bgGrad)"/>
+  <ellipse cx="800" cy="205" rx="520" ry="230" fill="url(#titleGlow)"/>
+
+  <!-- Doppler wavefronts (emitted along the ambulance's path, expand + fade, synced to a 5s loop) -->
+  <g>
+    <use href="#waveRing" transform="translate(180,120)" opacity="0">
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.001;0.5;1" values="0;0;65;0"/>
+      <animate attributeName="opacity" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.001;0.5;1" values="0;0.55;0;0"/>
+    </use>
+    <use href="#waveRing" transform="translate(387,120)" opacity="0">
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.167;0.667;1" values="0;0;65;0"/>
+      <animate attributeName="opacity" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.167;0.667;1" values="0;0.55;0;0"/>
+    </use>
+    <use href="#waveRing" transform="translate(593,120)" opacity="0">
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.333;0.833;1" values="0;0;65;0"/>
+      <animate attributeName="opacity" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.333;0.833;1" values="0;0.55;0;0"/>
+    </use>
+    <use href="#waveRing" transform="translate(800,120)" opacity="0">
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.5;0.999;1" values="0;0;65;0"/>
+      <animate attributeName="opacity" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.5;0.999;1" values="0;0.55;0;0"/>
+    </use>
+    <use href="#waveRing" transform="translate(1007,120)" opacity="0">
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.667;0.999;1" values="0;0;65;0"/>
+      <animate attributeName="opacity" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.667;0.999;1" values="0;0.55;0;0"/>
+    </use>
+    <use href="#waveRing" transform="translate(1213,120)" opacity="0">
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.833;0.999;1" values="0;0;65;0"/>
+      <animate attributeName="opacity" dur="5s" begin="0s" repeatCount="indefinite" keyTimes="0;0.833;0.999;1" values="0;0.55;0;0"/>
+    </use>
+  </g>
+
+  <!-- Ambulance -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" dur="5s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.42 0 0.58 1" values="180 120;1420 120"/>
+    <g transform="translate(-45,-20)">
+      <ellipse cx="45" cy="39" rx="42" ry="3" fill="#000000" opacity="0.25"/>
+      <circle cx="22" cy="36" r="6" fill="#1E293B"/>
+      <circle cx="22" cy="36" r="2.4" fill="#475569"/>
+      <circle cx="68" cy="36" r="6" fill="#1E293B"/>
+      <circle cx="68" cy="36" r="2.4" fill="#475569"/>
+      <rect x="4" y="14" width="82" height="20" rx="4" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+      <rect x="62" y="17" width="17" height="12" rx="2" fill="#BAE6FD" opacity="0.85"/>
+      <rect x="10" y="8" width="14" height="7" rx="1.5" fill="#3B82F6">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="41" y="18" width="4" height="12" fill="#EF4444"/>
+      <rect x="36" y="23" width="14" height="4" fill="#EF4444"/>
+    </g>
+  </g>
+
+  <!-- Title (static, no animation) -->
+  <text x="800" y="205" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#F8FAFC">🌊 Doppler Effect Interactive Learning Platform</text>
+  <text x="800" y="240" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#94A3B8" opacity="0.85" letter-spacing="1">Visualizing Motion. Understanding Sound.</text>
+</svg>
