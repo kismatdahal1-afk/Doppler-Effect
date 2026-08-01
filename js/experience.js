@@ -69,6 +69,37 @@
     fsBtn.setAttribute('aria-label', fs ? 'Exit fullscreen' : 'Enter fullscreen');
   }
 
+  /* ---------- mobile-only landscape lock (video is 16:9) ---------- */
+  function isMobile(){
+    return window.matchMedia && window.matchMedia('(max-width:620px)').matches;
+  }
+
+  function lockLandscape(){
+    if(!isMobile()) return;                       // never affects laptop/desktop
+    if(screen.orientation && screen.orientation.lock){
+      try{
+        var p = screen.orientation.lock('landscape');
+        if(p && p.catch) p.catch(function(){});
+      }catch(e){ /* unsupported or not fullscreen yet — best effort */ }
+    }
+  }
+
+  function unlockOrientation(){
+    if(!isMobile()) return;
+    if(screen.orientation && screen.orientation.unlock){
+      try{ screen.orientation.unlock(); }catch(e){}
+    }
+  }
+
+  function onFsChange(){
+    syncFsIcon();
+    if(document.fullscreenElement || document.webkitFullscreenElement){
+      lockLandscape();                             // enter -> landscape (16:9)
+    } else {
+      unlockOrientation();                         // exit  -> free rotation
+    }
+  }
+
   var autoPaused = false;
 
   function togglePlay(){
@@ -128,8 +159,8 @@
     if(durEl) durEl.textContent = fmt(video.duration);
     syncProgress();
   });
-  document.addEventListener('fullscreenchange', syncFsIcon);
-  document.addEventListener('webkitfullscreenchange', syncFsIcon);
+  document.addEventListener('fullscreenchange', onFsChange);
+  document.addEventListener('webkitfullscreenchange', onFsChange);
 
   if(seek){
     seek.addEventListener('input', function(){
