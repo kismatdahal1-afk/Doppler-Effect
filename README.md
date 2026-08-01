@@ -27,15 +27,15 @@ An interactive educational web application that transforms the Doppler Effect in
   <tr>
     <td align="center">
       <img src="screenshots/hero.png" width="260"/><br>
-      <sub><b>🏠 Hero</b></sub>
+      <sub><b>🏠 Hero Section </b></sub>
     </td>
     <td align="center">
       <img src="screenshots/simulation.png" width="260"/><br>
-      <sub><b>🎮 Simulation</b></sub>
+      <sub><b>🎮 Simulation Page</b></sub>
     </td>
     <td align="center">
       <img src="screenshots/application.png" width="260"/><br>
-      <sub><b>🚑 Application</b></sub>
+      <sub><b>🚑 Application Section</b></sub>
     </td>
   </tr>
 </table>
@@ -48,19 +48,19 @@ An interactive educational web application that transforms the Doppler Effect in
   <tr>
     <td align="center">
       <img src="screenshots/video.jpg" width="170"/><br>
-      <sub><b>🎬 Video</b></sub>
+      <sub><b>🎬 Video Section Page</b></sub>
     </td>
     <td align="center">
       <img src="screenshots/sim.jpg" width="170"/><br>
-      <sub><b>📚 Cases</b></sub>
+      <sub><b>🎮 Simulation Page</b></sub>
     </td>
     <td align="center">
       <img src="screenshots/simu.jpg" width="170"/><br>
-      <sub><b>🎮 Simulation</b></sub>
+      <sub><b>📚 Cases Page</b></sub>
     </td>
     <td align="center">
       <img src="screenshots/app.jpg" width="170"/><br>
-      <sub><b>📖 Detail Page</b></sub>
+      <sub><b>📖 Application Detail Page</b></sub>
     </td>
   </tr>
 </table>
