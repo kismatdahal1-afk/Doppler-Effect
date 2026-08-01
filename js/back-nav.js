@@ -67,6 +67,36 @@ history.scrollRestoration = 'manual';
       }, 100);
     });
 
+    /* Intercept Prev/Next navigation (top + bottom nav, all page types).
+       Replace the current history entry instead of pushing a new one, so the
+       stack stays [home, current page]. The Back button then always exits
+       straight to the original home page section instead of walking back
+       through intermediate detail pages. */
+    document.addEventListener('click', function(e){
+      if(e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      var a = e.target.closest('#prevBtn, #nextBtn, #bottomPrev, #bottomNext');
+      if(!a || a.target) return;
+      var href = a.getAttribute('href');
+      if(!href || href === '#') return;
+      e.preventDefault();
+      location.replace(href);
+    }, true);
+
+    /* Keyboard arrows follow the same replace semantics as the Prev/Next
+       buttons. Capture + stopImmediatePropagation override the per-page
+       handlers (case.js / app.js / inline limitation scripts) since this
+       script is loaded in <head> before them. */
+    document.addEventListener('keydown', function(e){
+      if(e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      var id = e.key === 'ArrowLeft' ? 'prevBtn' : 'nextBtn';
+      var a = document.getElementById(id);
+      var href = a ? a.getAttribute('href') : null;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if(!a || !href || href === '#') return;
+      location.replace(href);
+    }, true);
+
     /* Intercept ALL back links (top nav + bottom nav) in capture phase */
     document.addEventListener('click', function(e){
       if(e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
@@ -95,6 +125,23 @@ history.scrollRestoration = 'manual';
     sessionStorage.setItem(KEY, JSON.stringify({ y: window.scrollY }));
   }
 
+  /* Save the full entry state — section type, card index, exact scrollY —
+     only when leaving the home page via a card click. Prev/Next navigation
+     on detail pages never writes this; it stays untouched until the user
+     returns home and clicks another card. */
+  function saveEntry(card){
+    var sec = null, idx = null;
+    var section = card.closest('section[id]');
+    if(section) sec = section.id;
+    var siblings = card.parentNode ? card.parentNode.children : null;
+    if(siblings){
+      for(var i = 0; i < siblings.length; i++){
+        if(siblings[i] === card){ idx = i; break; }
+      }
+    }
+    sessionStorage.setItem(KEY, JSON.stringify({ sec: sec, idx: idx, y: window.scrollY }));
+  }
+
   function restore(){
     var raw = sessionStorage.getItem(KEY);
     if(!raw) return;
@@ -120,7 +167,8 @@ history.scrollRestoration = 'manual';
     if(e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var t = e.target;
     if(!(t instanceof Element)) return;
-    if(t.closest('.explore-card, .app-card, .lim-card')){ save(); return; }
+    var card = t.closest('.explore-card, .app-card, .lim-card');
+    if(card){ saveEntry(card); return; }
     var a = t.closest('a[href]');
     if(a && !a.target && /cases\/case-\d+\.html|applications\/|limitations\//.test(a.getAttribute('href') || '')){
       save();
