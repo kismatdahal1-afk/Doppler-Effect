@@ -121,6 +121,15 @@ footer{padding:38px 0;border-top:1px solid rgba(255,255,255,.08);}
 .footer__link svg{width:15px;height:15px;transition:transform .28s ease;}
 .footer__link:hover{color:#fff;text-shadow:0 0 14px rgba(110,140,255,.55);}
 .footer__link:hover svg{transform:translateY(-2px);}
+.footer-toast{
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,16px);
+  z-index:1200;padding:11px 20px;border-radius:12px;
+  background:rgba(10,13,26,.92);border:1px solid rgba(110,140,255,.35);
+  box-shadow:0 8px 30px rgba(0,0,0,.45),0 0 18px rgba(110,140,255,.14);
+  color:var(--text);font-size:13.5px;font-weight:500;letter-spacing:.02em;
+  opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s ease;
+}
+.footer-toast.show{opacity:1;transform:translate(-50%,0);}
 .footer__bar{
   margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);
   text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;
