@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/banner.svg" width="100%" alt="Doppler Effect Interactive Learning Platform Banner">
+  <img src="assets/docs/banner.svg" width="100%" alt="Doppler Effect Interactive Learning Platform Banner">
 </div>
 
 <br>
@@ -77,7 +77,7 @@ An interactive educational web application that transforms the Doppler Effect in
 
 ## 📖 About the Project
 
-The Doppler Effect Interactive Learning Platform helps learners understand the physics of sound and motion through **visual learning** instead of static equations. Rather than memorizing formulas, users explore **interactive simulations** that respond in real time, paired with **real-world examples** like ambulances, trains, and moving vehicles. Wrapped in a **modern interface**, the platform turns an abstract physics concept into something you can see, hear, and manipulate — building **intuitive understanding** through experimentation rather than repetition.
+The Doppler Effect Interactive Learning Platform helps learners understand the physics of sound and motion through **visual learning** instead of static equations. Rather than memorizing formulas, users explore **interactive simulations** that respond in real time, paired with **real-world examples** like ambulances, trains, and moving vehicles. Wrapped in a **modern interface**, the platform turns an abstract physics concept into something you can see, hear, and manipulate building **intuitive understanding** through experimentation rather than repetition.
 
 <br>
 
