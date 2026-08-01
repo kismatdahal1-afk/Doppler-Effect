@@ -18,7 +18,8 @@ history.scrollRestoration = 'manual';
 
   function isHome(){
     var p = location.pathname;
-    return /index\.html?$/i.test(p) || /\/$/.test(p);
+    if(/\/(cases|applications|limitations)(\/|$)/.test(p)) return false;
+    return /(^|\/)index\.html?$/i.test(p) || /\/$/.test(p);
   }
 
   function readSaved(){
@@ -90,27 +91,25 @@ history.scrollRestoration = 'manual';
   }
 
   /* ============================= HOME PAGE ============================= */
-  var savedY = null;
-
   function save(){
     sessionStorage.setItem(KEY, JSON.stringify({ y: window.scrollY }));
   }
 
   function restore(){
-    if(savedY === null){
-      var raw = sessionStorage.getItem(KEY);
-      if(!raw) return;
-      try{
-        var d = JSON.parse(raw);
-        savedY = (d && typeof d.y === 'number') ? d.y : null;
-      }catch(e){ return; }
-      if(savedY === null) return;
-      sessionStorage.removeItem(KEY);
-    }
+    var raw = sessionStorage.getItem(KEY);
+    if(!raw) return;
+    var y = null;
+    try{
+      var d = JSON.parse(raw);
+      y = (d && typeof d.y === 'number') ? d.y : null;
+    }catch(e){ return; }
+    if(y === null) return;
+    if(document.readyState === 'loading') return;
+    sessionStorage.removeItem(KEY);
     var root = document.documentElement;
     var prev = root.style.scrollBehavior;
     root.style.scrollBehavior = 'auto';
-    window.scrollTo(0, savedY);
+    window.scrollTo(0, y);
     root.style.scrollBehavior = prev;
     if(location.hash){
       history.replaceState(null, '', location.pathname + location.search);
