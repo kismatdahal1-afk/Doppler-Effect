@@ -1,5 +1,6 @@
 /* ============================= KEYFRAMES ============================= */
 @keyframes cardFadeUp{from{opacity:0;transform:translateY(40px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes revealRise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
 @keyframes auroraA{from{transform:translate(0,0);}to{transform:translate(4vw,6vw);}}
 @keyframes auroraB{from{transform:translate(0,0);}to{transform:translate(-5vw,-4vw);}}
 @keyframes auroraC{from{transform:translate(0,0) scale(1);}to{transform:translate(-3vw,4vw) scale(1.12);}}
