@@ -147,7 +147,21 @@
   font-size:clamp(15px,1.25vw,19px);font-weight:700;
   letter-spacing:-.01em;line-height:1.22;color:var(--text);
   text-shadow:0 2px 14px rgba(0,0,0,.6);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
+.app-card__title-text{flex:1;min-width:0;}
+
+/* "View →" text affordance — bottom-right of each card */
+.app-card .card-view{
+  display:inline-flex;align-items:center;gap:6px;flex:none;
+  font-family:var(--font-body);font-size:12px;font-weight:500;
+  letter-spacing:.02em;color:var(--app-accent);
+  cursor:pointer;white-space:nowrap;text-shadow:none;
+  transition:color .3s ease;
+}
+.app-card .card-view__arrow{display:inline-block;transition:transform .3s ease;}
+.app-card .card-view:hover{color:#fff;}
+.app-card .card-view:hover .card-view__arrow{transform:translateX(3px);}
 
 /* ============================= BOTTOM INFO BAR ============================= */
 .app-info-bar{

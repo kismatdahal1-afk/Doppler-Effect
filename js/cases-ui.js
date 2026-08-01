@@ -57,7 +57,8 @@ Object.keys(CASES).forEach(function(id){
     '<div class="explore-card__body">'+
       '<div class="explore-card__title">'+c.line1+(c.line2?'<span>'+c.line2+'</span>':'')+'</div>'+
     '</div>'+
-    '<div class="explore-card__footer">'+motionBarHTML(c.glyph)+'</div>'+
+    '<div class="explore-card__footer">'+motionBarHTML(c.glyph)+
+      '<span class="card-view" aria-hidden="true">View <span class="card-view__arrow">\u2192</span></span></div>'+
   '</button>';
 });
 caseGridEl.innerHTML=gridHTML;

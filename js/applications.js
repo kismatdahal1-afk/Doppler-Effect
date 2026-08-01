@@ -14,7 +14,8 @@
       '<img class="app-card__img" src="'+a.image+'" alt="'+a.title+'" loading="lazy">'+
       '<span class="app-card__shade"></span>'+
       '<span class="app-card__num">'+a.num+'</span>'+
-      '<span class="app-card__title">'+a.title+'</span>'+
+      '<span class="app-card__title"><span class="app-card__title-text">'+a.title+'</span>'+
+        '<span class="card-view" aria-hidden="true">View <span class="card-view__arrow">\u2192</span></span></span>'+
     '</a>';
   });
   grid.innerHTML = html;
