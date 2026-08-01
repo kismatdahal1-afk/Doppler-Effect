@@ -1,4 +1,10 @@
 <div align="center">
+  <img src="assets/banner.svg" width="100%" alt="Doppler Effect Interactive Learning Platform Banner">
+</div>
+
+<br>
+
+<div align="center">
 
 # 🌊 Doppler Effect Interactive Learning Platform
 
@@ -10,8 +16,8 @@ An interactive educational web application that transforms the Doppler Effect in
 ![Interactive Physics](https://img.shields.io/badge/Interactive-Physics-f97316?style=for-the-badge)
 ![Responsive Design](https://img.shields.io/badge/Responsive-Design-16a34a?style=for-the-badge)
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-success?style=for-the-badge)](YOUR_LIVE_DEMO_LINK)
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](YOUR_GITHUB_LINK)
+[![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-success?style=for-the-badge)](https://dopplereffect.vercel.app)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kismatdahal1-afk)
 
 </div>
 
@@ -27,7 +33,7 @@ An interactive educational web application that transforms the Doppler Effect in
   <tr>
     <td align="center">
       <img src="screenshots/hero.png" width="260"/><br>
-      <sub><b>🏠 Hero Section </b></sub>
+      <sub><b>🏠 Hero Section</b></sub>
     </td>
     <td align="center">
       <img src="screenshots/simulation.png" width="260"/><br>
@@ -152,7 +158,7 @@ The Doppler Effect Interactive Learning Platform helps learners understand the p
 
 <div align="center">
 
-🌐 **Website:** [https://dopplereffect.vercel.app)
+🌐 **Website:** [Visit Website](https://dopplereffect.vercel.app)
 
 </div>
 
@@ -168,7 +174,7 @@ The Doppler Effect Interactive Learning Platform helps learners understand the p
 
 Frontend Development Enthusiast · Physics Learning Enthusiast
 
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](<(https://github.com/kismatdahal1-afk)>)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kismatdahal1-afk)
 [![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/kisma_tt07/)
 
 </div>
