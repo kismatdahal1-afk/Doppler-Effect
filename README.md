@@ -17,7 +17,7 @@ An interactive educational web application that transforms the Doppler Effect in
 ![Responsive Design](https://img.shields.io/badge/Responsive-Design-16a34a?style=for-the-badge)
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-success?style=for-the-badge)](https://dopplereffect.vercel.app)
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kismatdahal1-afk)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kismatdahal1-afk/Doppler-Effect)
 
 </div>
 
@@ -174,7 +174,7 @@ The Doppler Effect Interactive Learning Platform helps learners understand the p
 
 Frontend Development Enthusiast · Physics Learning Enthusiast
 
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kismatdahal1-afk)
+[![Email](https://img.shields.io/badge/-Email-D14B34?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kismatdahal1@gmail.com)
 [![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/kisma_tt07/)
 
 </div>
