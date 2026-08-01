@@ -1,0 +1,149 @@
+/* ============================= SONIC BOOM AUDIO CARD ============================= */
+.sonic-audio-card {
+  max-width: 920px;
+  width: 100%;
+  margin: 36px auto 0;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, .55);
+  border: 1px solid rgba(56, 189, 248, .25);
+  box-shadow: 0 0 20px rgba(56, 189, 248, .15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* ===== header (icon + title + description) ===== */
+.sonic-audio__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.sonic-audio__icon {
+  font-size: 26px;
+  color: #38BDF8;
+  opacity: .95;
+}
+
+.sonic-audio__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  background: linear-gradient(135deg, #38BDF8, #22D3EE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sonic-audio__desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .82);
+  margin: 4px 0 0;
+  max-width: 640px;
+}
+
+/* ===== play button ===== */
+.sonic-audio__play {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--grad);
+  color: #04050B;
+  box-shadow: 0 8px 26px -4px rgba(110, 140, 255, .42);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, border-color .2s ease;
+}
+
+.sonic-audio__play:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px -4px rgba(56, 189, 248, .55);
+  filter: brightness(1.08);
+}
+
+.sonic-audio__play:active {
+  transform: translateY(0);
+}
+
+.sonic-audio__play:focus-visible {
+  outline: 2px solid #22D3EE;
+  outline-offset: 3px;
+}
+
+/* ===== waveform ===== */
+.sonic-audio__wave-wrap {
+  width: 100%;
+  height: 72px;
+  background: rgba(255, 255, 255, .03);
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, .08);
+  overflow: hidden;
+}
+
+.sonic-audio__wave {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+}
+
+/* ===== duration meta ===== */
+.sonic-audio__meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-mute);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ===== responsive ===== */
+@media (max-width: 768px) {
+  .sonic-audio-card {
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+  .sonic-audio__play {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+  .sonic-audio__title { font-size: 18px; }
+  .sonic-audio__desc { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .sonic-audio-card {
+    padding: 20px;
+    border-radius: 14px;
+    gap: 15px;
+  }
+  .sonic-audio__icon { font-size: 23px; }
+  .sonic-audio__wave-wrap { height: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sonic-audio__play { transition: none; }
+  .sonic-audio__play:hover { transform: none; }
+}
