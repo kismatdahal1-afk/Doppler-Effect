@@ -37,7 +37,19 @@ var gridHTML='';
 Object.keys(CASES).forEach(function(id){
   var c=CASES[id];
   var badge=String(Number(id)).padStart(2,'0');
-  var bg='assets/backgrounds/case'+id+'.png';
+  var CASE_IMGS={
+    1:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600007/case1_xjsgri.png',
+    2:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600010/case2_j1vv7n.png',
+    3:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600013/case3_rjarqe.png',
+    4:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600015/case4_ohapmq.png',
+    5:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600018/case5_nodcso.png',
+    6:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600020/case6_btooxs.png',
+    7:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600023/case7_gvj2nq.png',
+    8:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600026/case8_e2lvnt.png',
+    9:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600028/case9_zmpvkm.png',
+    10:'https://res.cloudinary.com/gsrayf9e/image/upload/v1785600354/case10_hgr4ja.png'
+  };
+  var bg=CASE_IMGS[id];
   var bc=BADGE_COLORS[id]||'#5B9CFF';
   gridHTML+='<button class="explore-card" data-case="'+id+'" style="--card-accent:'+c.color+';--badge-color:'+bc+'">'+
     '<div class="explore-card__img"><img src="'+bg+'" alt="" loading="lazy"></div>'+

@@ -8,7 +8,7 @@
 
 /* ============================= HERO ============================= */
 .hero{position:relative;overflow:hidden;padding:130px 0 100px;min-height:88vh;display:flex;align-items:center;}
-.hero__bg{position:absolute;inset:0;z-index:0;background:url('../assets/images/hero.png') no-repeat center center / cover;transform:scale(1.08) translateY(-15px);}
+.hero__bg{position:absolute;inset:0;z-index:0;background:url('https://res.cloudinary.com/gsrayf9e/image/upload/v1785594312/hero_y4ba7d.png') no-repeat center center / cover;transform:scale(1.08) translateY(-15px);}
 .hero__canvas-wrap{position:absolute;inset:0;z-index:1;mask-image:linear-gradient(to bottom, black 55%, transparent 97%);-webkit-mask-image:linear-gradient(to bottom, black 55%, transparent 97%);}
 #heroCanvas{width:100%;height:100%;display:block;}
 .particle-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;}

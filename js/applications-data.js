@@ -9,11 +9,11 @@
      vars     : [{tex, fallback, def}]   fact / summary : text
    ====================================================================== */
 var APPLICATIONS = [
-  { slug: "ambulance",         num: "01", title: "Ambulance Sirens",                      accent: "#ff4b5c", image: "assets/backgrounds/C1.png" },
-  { slug: "train",             num: "02", title: "Train Whistles",                        accent: "#8b5cf6", image: "assets/backgrounds/C2.png" },
-  { slug: "police-radar",      num: "03", title: "Police Radar Guns",                     accent: "#3b82f6", image: "assets/backgrounds/C3.png" },
-  { slug: "weather-radar",     num: "04", title: "Doppler Radar",                     accent: "#22c55e", image: "assets/backgrounds/C4.png" },
-  { slug: "medical-ultrasound",num: "05", title: "Medical Doppler Ultrasound",            accent: "#ec4899", image: "assets/backgrounds/C5.png" }
+  { slug: "ambulance",         num: "01", title: "Ambulance Sirens",                      accent: "#ff4b5c", image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599052/C1_lco7sf.png" },
+  { slug: "train",             num: "02", title: "Train Whistles",                        accent: "#8b5cf6", image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599071/C2_hzxtpl.png" },
+  { slug: "police-radar",      num: "03", title: "Police Radar Guns",                     accent: "#3b82f6", image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599074/C3_dpgadb.png" },
+  { slug: "weather-radar",     num: "04", title: "Doppler Radar",                     accent: "#22c55e", image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599075/C4_ob6zoq.png" },
+  { slug: "medical-ultrasound",num: "05", title: "Medical Doppler Ultrasound",            accent: "#ec4899", image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599076/C5_xy4fpv.png" }
 ];
 
 var APPLICATION_DETAILS = {
@@ -26,7 +26,7 @@ ambulance: {
   subtitle: "Emergency Transportation",
   heroDescription: "A speeding ambulance does not just carry a patient toward a hospital. It also carries a live physics demonstration, broadcasting a siren whose pitch rises as it approaches and falls as it departs, revealing in a few seconds exactly how motion reshapes the sound waves reaching your ear.",
   accent: "#ff4b5c",
-  image: "../../assets/backgrounds/C1.png",
+  image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599052/C1_lco7sf.png",
   num: "01",
   overview: [
     ["Category", "Everyday Acoustic Phenomenon"],
@@ -171,7 +171,7 @@ train: {
   subtitle: "Railway Travel and Station Platforms",
   heroDescription: "There are few sounds as dramatic as a train whistle sweeping past a platform, climbing to a sharp, urgent pitch as the train rushes in and then falling away into a lower, mournful tone the instant it passes, offering commuters a front-row demonstration of the Doppler Effect in a matter of seconds.",
   accent: "#8b5cf6",
-  image: "../../assets/backgrounds/C2.png",
+  image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599071/C2_hzxtpl.png",
   num: "02",
   overview: [
     ["Category", "Everyday Acoustic Phenomenon"],
@@ -315,7 +315,7 @@ train: {
   subtitle: "Traffic Speed Enforcement",
   heroDescription: "Every time a police officer points a radar gun at oncoming traffic, they are using the same physics that makes a siren's pitch rise and fall, except now the wave is invisible radio energy, and the shift it undergoes reveals a car's exact speed in an instant.",
   accent: "#3b82f6",
-  image: "../../assets/backgrounds/C3.png",
+  image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599074/C3_dpgadb.png",
   num: "03",
   overview: [
     ["Category", "Technology and Law Enforcement"],
@@ -459,7 +459,7 @@ train: {
   subtitle: "Meteorology and Storm Tracking",
   heroDescription: "High above the ground, invisible radio pulses sweep across the sky, bouncing off raindrops and swirling winds. The tiny frequency shifts hidden in the returning signals carry enough information for meteorologists to see a tornado forming inside a storm long before anyone on the ground could spot it.",
   accent: "#22c55e",
-  image: "../../assets/backgrounds/C4.png",
+  image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599075/C4_ob6zoq.png",
   num: "04",
   overview: [
     ["Category", "Meteorological Technology"],
@@ -603,7 +603,7 @@ train: {
   subtitle: "Diagnostic Medicine and Blood Flow Imaging",
   heroDescription: "Inside every hospital ultrasound room, sound waves too high for the human ear travel through skin and tissue, bounce off blood cells racing through veins and arteries, and return carrying a tiny frequency shift that reveals exactly how blood is moving inside the body, all without a single incision.",
   accent: "#ec4899",
-  image: "../../assets/backgrounds/C5.png",
+  image: "https://res.cloudinary.com/gsrayf9e/image/upload/v1785599076/C5_xy4fpv.png",
   num: "05",
   overview: [
     ["Category", "Medical Diagnostic Technology"],
