@@ -138,6 +138,10 @@
   border-color:color-mix(in srgb,var(--ac) 70%,transparent);
   box-shadow:0 34px 80px -30px color-mix(in srgb,var(--ac) 38%,rgba(0,0,0,.6)), inset 0 1px 0 rgba(255,255,255,.08);
 }
+.lim-card:nth-child(1){animation-delay:.05s;}
+.lim-card:nth-child(2){animation-delay:.1s;}
+.lim-card:nth-child(3){animation-delay:.15s;}
+.lim-card:nth-child(4){animation-delay:.2s;}
 .lim-card__art{
   position:relative;height:152px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;
   background:
